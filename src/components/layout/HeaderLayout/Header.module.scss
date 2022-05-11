@@ -1,0 +1,16 @@
+$primary-color: #304775;
+
+.header {
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+$mobile-or-table-screen: 1200px;
+
+.navbar {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: transparent !important;
+  border-right: none;
+  font-family: "Montserrat", sans-serif;
+
+  li {
+    height: 80%;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-right: 8px;
+    background: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #000073b2 !important;
+    transition: color 0.2s, background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    span {
+      display: flex;
+      align-items: center;
+      height: 90%;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    &:hover,
+    &:active {
+      color: #000073 !important;
+      font-weight: bolder;
+      background: rgb(226, 226, 226) !important;
+
+      span {
+        border-color: #000073;
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: $mobile-or-table-screen) {
+//   .navbar {
+//     color: #333;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     border-right: none;
+//     height: 40%;
+
+//     li {
+//       flex: 1;
+//       width: 100%;
+//       display: flex;
+//       align-items: center;
+//     }
+//   }
+// }

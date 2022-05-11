@@ -1,0 +1,23 @@
+.landingPage {
+  height: calc(100vh - 76px);
+  background-color: white;
+}
+
+.title {
+  display: flex;
+  position: absolute;
+  width: 55%;
+  height: 35%;
+  transform: translate(-5%, 48.75%) skew(-15deg);
+  background-color: #000073ee;
+
+  h1 {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 64px;
+    font-family: "Poppins", sans-serif;
+    margin: 0px 0px 0px 35px;
+    text-align: center;
+  }
+}
