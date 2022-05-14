@@ -2,7 +2,7 @@ const withPluginAntdLess = require("next-plugin-antd-less");
 // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 // primary-color options : dark blue #000073
 // secondary-color : light blue #ADD8E6
-// Silver Chalice:  #aaa7a7
+// Silver Chalice:  #73777B
 
 module.exports = withPluginAntdLess({
   modifyVars: {
