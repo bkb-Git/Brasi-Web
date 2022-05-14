@@ -1,20 +1,20 @@
-import { Col, Row, Button, Typography } from "antd";
+import { Button, Col, Row, Typography } from "antd";
 
 import Image from "next/image";
-import TrailerImg from "../../../../public/images/trailerImg.jpg";
+import ClearingAndForwardingImg from "../../../../public/images/ClearingAndForwarding.jpg";
 
-import compStyle from "./TransportAndLogistics.module.scss";
+import compStyle from "./ClearingAndForwarding.module.scss";
 
 const { Paragraph, Title } = Typography;
 
-const TransportAndLogistics = (props) => {
+const ClearingAndForwarding = (props) => {
   const { class: style } = props;
 
   const serviceTitle = () => {
     return (
       <Col className={compStyle.detailsHeader}>
         <Title level={1} className={compStyle.detailsTitle}>
-          Transport & Logistics
+          Clearing and Forwarding
         </Title>
       </Col>
     );
@@ -25,13 +25,13 @@ const TransportAndLogistics = (props) => {
       <Row gutter={[0, 8]} justify="center" align="middle" style={{ flexDirection: "column" }}>
         <Col className={compStyle.detailsText}>
           <Paragraph strong style={{ textAlign: "left" }}>
-            We guarantee our clients safe handling of their shipments (packages, goods and merchandise) through load
-            optimization arrangements to make sure that transporting, lifting, hauling, moving, carrying and delivery is
-            done professionally.
+            We offer our clients a one-stop shop solution for all their clearing and forwarding needs. Our staff teams
+            are well trained and competent to handle even the most sophisticated projects in a reliable, safety oriented
+            and professional way.
           </Paragraph>
         </Col>
         <Col style={{ width: "60%", paddingRight: "10%" }}>
-          <Button type="primary" block size="large">
+          <Button type="primary" block size="large" style={{ fontWeight: "bold" }}>
             Read more
           </Button>
         </Col>
@@ -52,18 +52,18 @@ const TransportAndLogistics = (props) => {
 
   const renderImage = () => {
     return (
-      <Col span={12} style={{ transform: "translate(10%,0)" }}>
-        <Image src={TrailerImg} alt="Transport and Logistics" style={{ zIndex: 0 }} />
+      <Col span={12}>
+        <Image src={ClearingAndForwardingImg} alt="Port Clearing and Forwarding" style={{ zIndex: 0 }} />
       </Col>
     );
   };
 
   return (
     <Row className={style.service} justify="center" align="middle">
-      {renderImage()}
       {renderDetails()}
+      {renderImage()}
     </Row>
   );
 };
 
-export default TransportAndLogistics;
+export default ClearingAndForwarding;

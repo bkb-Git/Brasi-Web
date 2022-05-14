@@ -1,13 +1,21 @@
 import LandingSection from "./LandingSection";
-import OurExpertise from "./OurExpertise/OurExpertise";
+import ClearingAndForwarding from "./ClearingAndForwarding";
+import TransportAndLogistics from "./TransportAndLogistics/TransportAndLogistics";
+import WarehouseSolutions from "./WarehouseSolutions/WarehouseSolutions";
 
-import style from "./Home.module.scss";
+import homeStyle from "./Home.module.scss";
+import OurValues from "./OurValues/OurValues";
+import OurNetwork from "./OurNetwork/OurNetwork";
 
 const Home = () => {
   return (
     <>
       <LandingSection />
-      <OurExpertise class={style} />
+      <ClearingAndForwarding class={homeStyle} />
+      <TransportAndLogistics class={homeStyle} />
+      <WarehouseSolutions class={homeStyle} />
+      <OurValues class={homeStyle} />
+      <OurNetwork class={homeStyle} />
     </>
   );
 };

@@ -1,0 +1,43 @@
+.values {
+  flex-direction: column;
+  margin: 25px 0px;
+  background: #f0f2f5;
+}
+
+.valuesContainer {
+  height: 70vh;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.valuesCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: default;
+  }
+}
+
+.cardTitle {
+  background: #000073;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #fff !important;
+  height: 20%;
+  padding: 5px 0px;
+}
+
+.cardText {
+  font-family: "Montserrat", sans-serif;
+  padding: 0 24px;
+  margin-top: 50px;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
