@@ -1,3 +1,4 @@
+import { ReadOutlined } from "@ant-design/icons";
 import { Col, Row, Button, Typography } from "antd";
 
 import Image from "next/image";
@@ -31,7 +32,7 @@ const WarehouseSolutions = (props) => {
           </Paragraph>
         </Col>
         <Col style={{ width: "60%", paddingRight: "10%" }}>
-          <Button type="primary" block size="large">
+          <Button icon={<ReadOutlined />} type="primary" block size="large">
             Read more
           </Button>
         </Col>

@@ -3,6 +3,9 @@ import { Row, Col, Typography } from "antd";
 import KenyaSvg from "../../../../public/svg/KenyaMapSvg";
 import UgandaMapSvg from "../../../../public/svg/UgandaMapSvg";
 import EAMapSvg from "../../../../public/svg/EastAfricanMap";
+import KenyanFlag from "../../../../public/images/KenyanFlag.jpg";
+
+import Image from "next/image";
 
 import compStyle from "./OurNetwork.module.scss";
 
@@ -23,7 +26,9 @@ const OurNetwork = (props) => {
     return (
       <Row gutter={[32, 0]} align="middle" style={{ height: "100vh", width: "100%" }}>
         <Col className={compStyle.map} span={8}>
-          <Title level={2}>Kenya</Title>
+          <Col className={compStyle.titleContainer}>
+            <Title level={2}>Kenya</Title>
+          </Col>
           <KenyaSvg />
         </Col>
         <Col className={compStyle.map} span={8}>

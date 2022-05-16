@@ -17,7 +17,7 @@ const OurValues = (props) => {
 
   const renderValues = () => {
     return (
-      <Row gutter={[30, 0]} justify="center" align="middle" className={compStyle.valuesContainer}>
+      <Row className={compStyle.valuesContainer} gutter={[30, 0]} justify="center" align="middle">
         <Col span={6}>
           <Card hoverable className={compStyle.valuesCard} bodyStyle={{ height: "100%", padding: "24px 0px" }}>
             <Title level={2} className={compStyle.cardTitle}>
@@ -64,7 +64,7 @@ const OurValues = (props) => {
   };
 
   return (
-    <Row gutter={[0, 16]} className={compStyle.values} justify="center" align="middle">
+    <Row gutter={[0, 25]} className={compStyle.values} justify="center" align="middle">
       {renderTitle()}
       {renderValues()}
     </Row>

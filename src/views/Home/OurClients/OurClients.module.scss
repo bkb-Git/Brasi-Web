@@ -1,0 +1,24 @@
+@import "../../../../styles/colors.scss";
+
+.clientList {
+  height: 50vh;
+  width: 100%;
+  background: $secondary-bg-color;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listTitle {
+  padding: 15px 25px;
+  background: linear-gradient(to bottom right, $primary-color, $secondary-color);
+  color: $primary-bg-color !important;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(to top left, $primary-color, $secondary-color);
+  }
+}
