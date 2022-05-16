@@ -1,3 +1,6 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
+
 .map {
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
@@ -6,13 +9,13 @@
   justify-content: flex-end;
   align-items: center;
   height: 80%;
-  background: #000073;
+  background: $primary-color;
   transition: background 0.5s, border-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   h2 {
-    color: white;
+    color: $primary-text-color;
     transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    font-family: "Poppins", sans-serif;
+    font-family: $secondary-font;
   }
 
   svg {
@@ -21,16 +24,20 @@
   }
 
   &:hover {
-    background: white;
-    border-color: #000073;
+    background: $primary-bg-color;
+    border-color: $primary-color;
 
     h2 {
-      color: #000073;
+      color: $primary-color;
     }
 
     svg {
-      fill: #000073;
+      fill: $primary-color;
       transform: scale(1.05);
     }
   }
+}
+
+.title {
+  background-image: url("../../../../public/images/KenyanFlag.jpg");
 }

@@ -1,3 +1,6 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
+
 .details {
   height: 90%;
   flex-direction: column;
@@ -10,8 +13,9 @@
   align-items: center;
   width: 100%;
   height: 25%;
-  background: #73777b;
+  background: $tertiary-color;
   transform: skew(-15deg);
+  font-family: $secondary-font;
 }
 
 .detailsText {
@@ -22,9 +26,10 @@
   width: 60%;
   word-spacing: 3px;
   letter-spacing: 0.5px;
+  font-family: $primary-font;
 }
 
 .detailsTitle {
-  color: white !important;
+  color: $primary-text-color !important;
   margin-bottom: 0 !important;
 }

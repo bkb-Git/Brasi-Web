@@ -1,11 +1,15 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
+
 .values {
   flex-direction: column;
   margin: 25px 0px;
-  background: #f0f2f5;
+  background: $secondary-bg-color;
+  padding-bottom: 35px;
 }
 
 .valuesContainer {
-  height: 70vh;
+  height: 50vh;
   width: 100%;
   padding: 15px;
   border-radius: 10px;
@@ -25,16 +29,16 @@
 }
 
 .cardTitle {
-  background: #000073;
-  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, $primary-color, $secondary-color);
+  font-family: $secondary-font;
   text-align: center;
-  color: #fff !important;
+  color: $primary-bg-color !important;
   height: 20%;
   padding: 5px 0px;
 }
 
 .cardText {
-  font-family: "Montserrat", sans-serif;
+  font-family: $primary-font;
   padding: 0 24px;
   margin-top: 50px;
   word-spacing: 2px;

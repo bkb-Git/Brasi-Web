@@ -1,3 +1,4 @@
+import { ReadOutlined } from "@ant-design/icons";
 import { Button, Col, Row, Typography } from "antd";
 
 import Image from "next/image";
@@ -31,7 +32,7 @@ const ClearingAndForwarding = (props) => {
           </Paragraph>
         </Col>
         <Col style={{ width: "60%", paddingRight: "10%" }}>
-          <Button type="primary" block size="large" style={{ fontWeight: "bold" }}>
+          <Button icon={<ReadOutlined />} type="primary" block size="large" style={{ fontWeight: "bold" }}>
             Read more
           </Button>
         </Col>

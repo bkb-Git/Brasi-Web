@@ -1,6 +1,11 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/fonts.scss";
+
+// #000073ee
+
 .landingPage {
   height: calc(100vh - 76px);
-  background-color: white;
+  background-color: $primary-bg-color;
 }
 
 .title {
@@ -9,14 +14,14 @@
   width: 55%;
   height: 35%;
   transform: translate(-5%, 48.75%) skew(-15deg);
-  background-color: #000073ee;
+  background-color: adjust-color($color: $primary-color, $alpha: -0.2);
 
   h1 {
     display: flex;
     align-items: center;
-    color: white;
+    color: $primary-text-color;
     font-size: 64px;
-    font-family: "Poppins", sans-serif;
+    font-family: $secondary-font;
     margin: 0px 0px 0px 35px;
     text-align: center;
   }

@@ -6,6 +6,7 @@ import WarehouseSolutions from "./WarehouseSolutions/WarehouseSolutions";
 import homeStyle from "./Home.module.scss";
 import OurValues from "./OurValues/OurValues";
 import OurNetwork from "./OurNetwork/OurNetwork";
+import OurClients from "./OurClients/OurClients";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <WarehouseSolutions class={homeStyle} />
       <OurValues class={homeStyle} />
       <OurNetwork class={homeStyle} />
+      <OurClients class={homeStyle} />
     </>
   );
 };
