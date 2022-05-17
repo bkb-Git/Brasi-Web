@@ -2,7 +2,7 @@ import { ReadOutlined } from "@ant-design/icons";
 import { Col, Row, Button, Typography } from "antd";
 
 import Image from "next/image";
-import WarehouseImg from "../../../../public/images/forklift.jpg";
+import WarehouseImg from "public/images/forklift.jpg";
 
 import compStyle from "./WarehouseSolutions.module.scss";
 

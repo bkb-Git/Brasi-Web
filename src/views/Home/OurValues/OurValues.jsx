@@ -1,8 +1,9 @@
 import { Card, Col, Row, Typography } from "antd";
 
-const { Title, Paragraph } = Typography;
-
 import compStyle from "./OurValues.module.scss";
+
+
+const { Title, Paragraph } = Typography;
 
 const OurValues = (props) => {
   const { class: style } = props;

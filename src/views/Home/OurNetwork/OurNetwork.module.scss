@@ -1,5 +1,5 @@
-@import "../../../../styles/colors.scss";
-@import "../../../../styles/fonts.scss";
+@import "styles/colors.scss";
+@import "styles/fonts.scss";
 
 .map {
   border-top: 2px solid transparent;
@@ -39,5 +39,5 @@
 }
 
 .title {
-  background-image: url("../../../../public/images/KenyanFlag.jpg");
+  background-image: url("/public/images/KenyanFlag.jpg");
 }

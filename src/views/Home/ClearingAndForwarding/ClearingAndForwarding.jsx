@@ -1,8 +1,8 @@
 import { ReadOutlined } from "@ant-design/icons";
 import { Button, Col, Row, Typography } from "antd";
-
 import Image from "next/image";
-import ClearingAndForwardingImg from "../../../../public/images/ClearingAndForwarding.jpg";
+
+import ClearingAndForwardingImg from "public/images/ClearingAndForwarding.jpg";
 
 import compStyle from "./ClearingAndForwarding.module.scss";
 

@@ -21,7 +21,7 @@ const HeaderLayout = () => {
 
   const renderNavbar = () => {
     return (
-      <Col flex={1} className={style.navbar}>
+      <Col flex={1} className={style.header__navbar}>
         <Navbar />
       </Col>
     );

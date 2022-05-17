@@ -1,8 +1,8 @@
 import { ReadOutlined } from "@ant-design/icons";
 import { Col, Row, Button, Typography } from "antd";
-
 import Image from "next/image";
-import TrailerImg from "../../../../public/images/trailerImg.jpg";
+
+import TrailerImg from "public/images/trailerImg.jpg";
 
 import compStyle from "./TransportAndLogistics.module.scss";
 
