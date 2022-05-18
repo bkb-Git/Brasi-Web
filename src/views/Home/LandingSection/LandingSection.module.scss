@@ -1,28 +1,28 @@
-@import "../../../../styles/colors.scss";
-@import "../../../../styles/fonts.scss";
+@import "styles/abstract/variables";
 
 // #000073ee
 
 .landingPage {
   height: calc(100vh - 76px);
-  background-color: $primary-bg-color;
-}
+  background-color: $background-color-primary;
 
-.title {
-  display: flex;
-  position: absolute;
-  width: 55%;
-  height: 35%;
-  transform: translate(-5%, 48.75%) skew(-15deg);
-  background-color: adjust-color($color: $primary-color, $alpha: -0.2);
-
-  h1 {
+  &__title {
     display: flex;
-    align-items: center;
-    color: $primary-text-color;
-    font-size: 64px;
-    font-family: $secondary-font;
-    margin: 0px 0px 0px 35px;
-    text-align: center;
+    position: absolute;
+    width: 55%;
+    height: 35%;
+    transform: translate(-5%, 48.75%) skew(-15deg);
+    background-color: adjust-color($color: $color-primary, $alpha: -0.2);
+
+    h1 {
+      display: flex;
+      align-items: center;
+      color: $color-primary-white;
+      font-size: 64px;
+      font-family: $font-secondary;
+      margin: 0 0 0 35px;
+      text-align: center;
+    }
   }
 }
+

@@ -11,6 +11,13 @@ module.exports = withPluginAntdLess({
     "@menu-item-height": "50px",
     "@menu-dark-item-active-bg": "#fff",
     "@menu-dark-highlight-color": "#333",
+
+    // Typography
+    "@font-family": '"Montserrat", sans-serif',
+
+    "@font-size-base": "16px",
+    "@font-size-lg": "@font-size-base + 2px",
+    "@font-size-sm": "14px",
   },
   webpack(config) {
     config.module.rules.push({

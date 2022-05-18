@@ -1,0 +1,13 @@
+@import "styles/abstract/variables";
+
+h1.ant-typography {
+  letter-spacing: 1px;
+  font-family: $font-primary;
+}
+
+.ant-typography,
+h2.ant-typography,
+h4.ant-typography,
+h5.ant-typography {
+  font-family: $font-secondary;
+}

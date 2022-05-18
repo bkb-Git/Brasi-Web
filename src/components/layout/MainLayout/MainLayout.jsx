@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 
-import FooterLayout from "../FooterLayout";
-import HeaderLayout from "../HeaderLayout";
+import FooterLayout from "src/components/layout/FooterLayout";
+import HeaderLayout from "src/components/layout/HeaderLayout";
 
 import style from "./MainLayout.module.scss";
 

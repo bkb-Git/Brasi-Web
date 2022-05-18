@@ -1,0 +1,43 @@
+@import "styles/abstract/variables";
+
+.serviceSection {
+  $main: &;
+
+  &,
+  &Right {
+    #{$main}__info {
+      height: 75vh;
+      width: 90%;
+      flex-direction: column;
+    }
+  }
+
+  &Right {
+    #{$main}__header {
+      transform: translate(-10rem, 0);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140%;
+    height: 15rem;
+    background: $color-tertiary;
+  }
+
+  &__text {
+    width: 80%;
+  }
+
+  &__title {
+    color: $color-primary-white !important;
+    margin-bottom: 0 !important;
+  }
+
+  &__image {
+    width: 100%;
+    height: 50rem;
+  }
+}

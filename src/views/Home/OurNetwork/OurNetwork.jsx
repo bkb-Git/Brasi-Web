@@ -1,11 +1,8 @@
 import { Row, Col, Typography } from "antd";
 
-import KenyaSvg from "../../../../public/svg/KenyaMapSvg";
-import UgandaMapSvg from "../../../../public/svg/UgandaMapSvg";
-import EAMapSvg from "../../../../public/svg/EastAfricanMap";
-import KenyanFlag from "../../../../public/images/KenyanFlag.jpg";
-
-import Image from "next/image";
+import KenyaSvg from "public/svg/KenyaMapSvg";
+import UgandaMapSvg from "public/svg/UgandaMapSvg";
+import EAMapSvg from "public/svg/EastAfricanMap";
 
 import compStyle from "./OurNetwork.module.scss";
 

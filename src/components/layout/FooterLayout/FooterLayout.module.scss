@@ -1,5 +1,4 @@
-@import "../../../../styles/colors.scss";
-@import "../../../../styles/fonts.scss";
+@import "styles/abstract/variables";
 
 .footer {
   height: 100%;
@@ -12,21 +11,21 @@
   justify-content: center;
 
   h4 {
-    font-family: $secondary-font;
+    font-family: $font-secondary;
   }
 }
 
 .divider {
   height: 80%;
   border-width: 3px;
-  border-color: $primary-color;
+  border-color: $color-primary;
 }
 
 .footerItemIcon {
   margin: 0 10px 0.4em 0;
   font-size: 20px;
   font-weight: 400;
-  color: $primary-color;
+  color: $color-primary;
 }
 
 .contactDetails {
