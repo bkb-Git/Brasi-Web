@@ -10,15 +10,11 @@
       width: 90%;
       flex-direction: column;
     }
-
-    #{$main}__header {
-      transform: translate(10rem, 0) skew(-15deg);
-    }
   }
 
   &Right {
     #{$main}__header {
-      transform: translate(-10rem, 0) skew(-15deg);
+      transform: translate(-10rem, 0);
     }
   }
 
