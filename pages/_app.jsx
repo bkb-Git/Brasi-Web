@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Loader from "../src/components/Loader";
 import MainLayout from "../src/components/layout/MainLayout";
 
-import "../styles/globals.scss";
+import "../styles/index.scss";
 
 const MyApp = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(true);

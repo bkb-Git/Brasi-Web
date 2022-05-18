@@ -52,7 +52,7 @@ const OurClients = (props) => {
   const renderListSection = () => {
     return (
       <Row className={compStyle.clientList} justify="center">
-        <Col span={16} style={{ marginTop: "30px" }}>
+        <Col span={16}>
           <Title level={4} style={{ textAlign: "center" }}>
             Due to our commitment to smooth operations and quality services to our clients, we boast of a large
             clientele spread across Kenya, Uganda and the wide East African Region.
@@ -64,7 +64,7 @@ const OurClients = (props) => {
   };
 
   return (
-    <Row gutter={[0, 48]} justify="center" align="middle" style={{ flexDirection: "column", marginBottom: "50px" }}>
+    <Row gutter={[0, 48]} justify="center" align="middle" style={{ flexDirection: "column" }}>
       {renderTitle()}
       {renderListSection()}
     </Row>

@@ -1,10 +1,10 @@
-@import "styles/colors.scss";
-@import "styles/fonts.scss";
+@import "styles/abstract/variables";
+@import "styles/abstract/fonts";
 
 .values {
   flex-direction: column;
   margin: 25px 0px;
-  background: $secondary-bg-color;
+  background: $background-color-secondary;
   padding-bottom: 35px;
 }
 
@@ -29,19 +29,16 @@
 }
 
 .cardTitle {
-  background: linear-gradient(to bottom right, $primary-color, $secondary-color);
-  font-family: $secondary-font;
+  background: linear-gradient(to bottom right, $color-primary, $color-secondary);
+  font-family: $font-secondary;
   text-align: center;
-  color: $primary-bg-color !important;
+  color: $background-color-primary !important;
   height: 20%;
   padding: 5px 0px;
 }
 
 .cardText {
-  font-family: $primary-font;
   padding: 0 24px;
   margin-top: 50px;
-  word-spacing: 2px;
-  letter-spacing: 0.5px;
   text-align: center;
 }

@@ -1,5 +1,5 @@
-@import "styles/colors.scss";
-@import "styles/fonts.scss";
+@import "styles/abstract/variables";
+@import "styles/abstract/fonts";
 
 .map {
   border-top: 2px solid transparent;
@@ -9,13 +9,12 @@
   justify-content: flex-end;
   align-items: center;
   height: 80%;
-  background: $primary-color;
+  background: $color-primary;
   transition: background 0.5s, border-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   h2 {
-    color: $primary-text-color;
+    color: $color-primary-white;
     transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    font-family: $secondary-font;
   }
 
   svg {
@@ -24,15 +23,15 @@
   }
 
   &:hover {
-    background: $primary-bg-color;
-    border-color: $primary-color;
+    background: $background-color-primary;
+    border-color: $color-primary;
 
     h2 {
-      color: $primary-color;
+      color: $color-primary;
     }
 
     svg {
-      fill: $primary-color;
+      fill: $color-primary;
       transform: scale(1.05);
     }
   }
