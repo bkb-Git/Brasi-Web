@@ -1,6 +1,4 @@
-import { ReadOutlined } from "@ant-design/icons";
 import { Button, Col, Row, Space, Typography } from "antd";
-import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 import Image from "next/image";
 
 import style from "src/views/Home/ServiceSection/ServiceSection.module.scss";
@@ -58,7 +56,7 @@ const ServiceSection = (props) => {
 
   const renderImage = () => {
     return (
-      <Col xs={20} lg={12} flex={1}>
+      <Col xs={20} lg={16} flex={1}>
         <div className={style.serviceSection__image}>
           <Image src={details.image} alt={details.title} style={{ zIndex: 0 }} layout="fill" />
         </div>
