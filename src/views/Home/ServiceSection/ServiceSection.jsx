@@ -1,14 +1,14 @@
 import { Button, Col, Row, Space, Typography } from "antd";
 import Image from "next/image";
 
-import style from "src/views/Home/ServiceSection/ServiceSection.module.scss";
+import style from "./ServiceSection.module.scss";
 
 const { Paragraph, Title } = Typography;
 
 const SECTION_DIRECTION = {
-  RIGHT: 'right',
-  LEFT: 'left'
-}
+  RIGHT: "right",
+  LEFT: "left",
+};
 
 const ServiceSection = (props) => {
   const { details, direction = SECTION_DIRECTION.LEFT } = props;
@@ -26,11 +26,9 @@ const ServiceSection = (props) => {
   const renderParagraph = () => {
     return (
       <Space direction="vertical" size="large">
-        <div className={style.serviceSection__text}>
-          <Paragraph>
-            {details.paragraph}
-          </Paragraph>
-        </div>
+        <Col className={style.serviceSection__text}>
+          <Paragraph>{details.paragraph}</Paragraph>
+        </Col>
         <Button type="primary" size="large">
           Read more
         </Button>
@@ -41,12 +39,7 @@ const ServiceSection = (props) => {
   const renderDetails = () => {
     return (
       <Col xs={20} lg={12} style={{ zIndex: 2, height: "100%" }}>
-        <Row
-          gutter={[0, 48]}
-          justify="center"
-          align="middle"
-          className={style.serviceSection__info}
-        >
+        <Row gutter={[0, 48]} justify="center" align="middle" className={style.serviceSection__info}>
           {renderTitle()}
           {renderParagraph()}
         </Row>
@@ -79,8 +72,9 @@ const ServiceSection = (props) => {
         {renderDetails()}
         {renderImage()}
       </>
-    )
-  }
+    );
+  };
+
   return (
     <Row
       justify="center"

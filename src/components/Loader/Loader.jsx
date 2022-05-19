@@ -1,12 +1,9 @@
 import { Spin } from "antd";
 
+import style from "./Loader.module.scss";
+
 const Loader = () => {
-  return (
-    <Spin
-      size="large"
-      style={{ height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}
-    />
-  );
+  return <Spin className={style.loader} size="large" />;
 };
 
 export default Loader;

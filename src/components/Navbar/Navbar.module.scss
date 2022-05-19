@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import "/styles/abstract/variables";
 
 $mobile-or-table-screen: 1200px;
 
@@ -10,14 +10,14 @@ $mobile-or-table-screen: 1200px;
   justify-content: space-evenly;
   background: transparent !important;
   border-right: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
 
   li {
     height: 80%;
-    line-height: 20px;
-    font-size: 14px;
+    line-height: 2rem;
+    font-size: 1.7rem;
     font-weight: bolder;
-    margin-right: 8px;
+    margin-right: 0.8rem;
     background: none;
     display: flex !important;
     justify-content: center;
@@ -30,7 +30,7 @@ $mobile-or-table-screen: 1200px;
       display: flex;
       align-items: center;
       height: 90%;
-      border-bottom: 3px solid transparent;
+      border-bottom: 0.3rem solid transparent;
       transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 

@@ -18,9 +18,6 @@ const Navbar = () => {
       <Menu.Item key="/services" onClick={handleRoute}>
         Services
       </Menu.Item>
-      <Menu.Item key="/offers" onClick={handleRoute}>
-        Offers
-      </Menu.Item>
       <Menu.Item key="/about" onClick={handleRoute}>
         About us
       </Menu.Item>
