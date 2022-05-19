@@ -1,4 +1,5 @@
-import { Row, Col, Divider, Typography } from "antd";
+import { Row, Col, Typography } from "antd";
+import TeamCard from "../../../components/TeamCard/TeamCard";
 
 import style from "./OurTeam.module.scss";
 
@@ -8,11 +9,8 @@ const OurTeam = () => {
   const renderTitle = () => {
     return (
       <Row justify="center" align="middle" style={{ width: "100%", flexDirection: "column" }}>
-        <Col span={8}>
+        <Col span={8} style={{ width: "30%" }}>
           <Title className={style.title}>Our Team</Title>
-        </Col>
-        <Col style={{ width: "30vw" }}>
-          <Divider className={style.divider} />
         </Col>
       </Row>
     );
@@ -32,10 +30,23 @@ const OurTeam = () => {
     );
   };
 
+  const renderTeamList = () => {
+    return (
+      <Col span={20} style={{ marginTop: "5rem", height: "60vh" }}>
+        <Row gutter={[32, 0]} justify="center" align="middle" style={{ height: "100%" }}>
+          <TeamCard title="General Manager" />
+          <TeamCard title="Customer Service Manager" />
+          <TeamCard title="Front Office Team" />
+        </Row>
+      </Col>
+    );
+  };
+
   return (
     <Row justify="center" align="middle" style={{ marginBottom: "5rem" }}>
       {renderTitle()}
       {renderText()}
+      {renderTeamList()}
     </Row>
   );
 };

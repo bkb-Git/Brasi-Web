@@ -8,11 +8,8 @@ const MissionStatement = () => {
   const renderTitle = () => {
     return (
       <Row justify="center" align="middle" style={{ width: "100%", flexDirection: "column" }}>
-        <Col span={8}>
+        <Col span={8} style={{ width: "30%" }}>
           <Title className={style.title}>Mission Statement</Title>
-        </Col>
-        <Col style={{ width: "30vw" }}>
-          <Divider className={style.divider} />
         </Col>
       </Row>
     );
