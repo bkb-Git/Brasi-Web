@@ -1,0 +1,19 @@
+@import "../../../../styles/fonts.scss";
+@import "../../../../styles/colors.scss";
+
+.title {
+  font-size: 96px;
+  font-family: $secondary-font;
+  text-align: center;
+  border-bottom: 4px solid $primary-color;
+  padding-bottom: 0.5em;
+}
+
+.text {
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  word-spacing: 8px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 2rem;
+}
