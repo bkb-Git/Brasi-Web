@@ -1,0 +1,44 @@
+@import "/styles/abstract/variables";
+
+.slide {
+  background: #ccc;
+  height: 65vh;
+  padding: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #ccc;
+  }
+
+  &__section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: #fff;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        height: 10rem;
+        fill: $color-primary;
+      }
+    }
+
+    &__title {
+      h4 {
+        font-family: $font-secondary !important;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+}

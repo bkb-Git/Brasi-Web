@@ -1,0 +1,18 @@
+@import "/styles/abstract/variables";
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    padding: 1.5rem 2.5rem;
+    background: linear-gradient(to bottom right, $color-primary, $color-secondary);
+    color: $background-color-primary !important;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(to top left, $color-primary, $color-secondary);
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import "/styles/abstract/variables";
+@import "/styles/utilities/index";
+
+.arrow {
+  height: auto !important;
+  width: auto !important;
+  font-size: 4em !important;
+  color: #ccc !important;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  height: auto;
+  padding: 4em 0;
+  // background: $background-color-secondary;
+
+  &__title {
+    font-weight: bold;
+    font-family: $font-secondary;
+    font-size: 4.8rem;
+    word-spacing: 3px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 4px solid $color-primary;
+    margin-bottom: none;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &__carousel {
+    // background: lightblue;
+
+    span {
+      svg {
+        transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      &[id="prevArrow"] {
+        @extend .arrow;
+        left: -1em !important;
+      }
+
+      &[id="nextArrow"] {
+        @extend .arrow;
+        right: -2em !important;
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &__button {
+      height: 5em;
+      width: 2em;
+      color: $color-primary;
+      font-size: 5em;
+    }
+  }
+}

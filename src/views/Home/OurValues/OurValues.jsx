@@ -1,9 +1,15 @@
-import { Card, Col, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
+import BuisnessTimeSvg from "public/svg/BuisnessTimeSvg";
+
+import ConsistencySvg from "public/svg/ConsistencySvg";
+import MagnifyingGlassSvg from "public/svg/MagnifyingGlassSvg";
+import ScalesSvg from "public/svg/ScalesSvg";
+
 import ValueCard from "src/components/ValueCard";
 
-import compStyle from "./OurValues.module.scss";
+import style from "./OurValues.module.scss";
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 const VALUES = {
   Integrity: {
@@ -12,8 +18,7 @@ const VALUES = {
   },
   Professionalism: {
     title: "Professionalism",
-    paragraph:
-      "We treat our clients with utmost respect and during our dealings we inform them of all that they need to know about ourselves and the services that would benefit them.",
+    paragraph: "We treat our clients with respect and inform them of services we provide that would benefit them.",
   },
   Consistency: {
     title: "Consistency",
@@ -25,28 +30,26 @@ const VALUES = {
   },
 };
 
-const OurValues = (props) => {
-  const { class: style } = props;
-
+const OurValues = () => {
   const renderTitle = () => {
-    return <Title className={style.homeTitle}>Our Values</Title>;
+    return <Title className={style.container__title}>Our Values</Title>;
   };
 
   const renderValues = () => {
     return (
-      <Row className={compStyle.valuesContainer} gutter={[30, 0]} justify="center" align="middle">
-        <ValueCard value={VALUES.Integrity} />
-        <ValueCard value={VALUES.Consistency} />
-        <ValueCard value={VALUES.Accountability} />
-        <ValueCard value={VALUES.Professionalism} />
+      <Row className={style.container__values} gutter={[30, 0]} justify="center" align="middle">
+        <ValueCard value={VALUES.Integrity} icon={<ScalesSvg />} />
+        <ValueCard value={VALUES.Consistency} icon={<ConsistencySvg />} />
+        <ValueCard value={VALUES.Accountability} icon={<MagnifyingGlassSvg />} />
+        <ValueCard value={VALUES.Professionalism} icon={<BuisnessTimeSvg />} />
       </Row>
     );
   };
 
   return (
-    <Row gutter={[0, 25]} className={compStyle.values} justify="center" align="middle">
+    <Row gutter={[0, 25]} className={style.container} justify="center" align="middle">
       <Col xs={18}>{renderTitle()}</Col>
-      <Col xs={20} lg={16}>
+      <Col xs={20} lg={16} xl={22}>
         {renderValues()}
       </Col>
     </Row>

@@ -81,7 +81,7 @@ const ServiceSection = (props) => {
       align="middle"
       className={direction === SECTION_DIRECTION.RIGHT ? style.serviceSectionRight : style.serviceSection}
     >
-      <Col xs={22} lg={16}>
+      <Col xs={22} lg={20} xxl={16}>
         <Row justify="center" align="middle">
           {renderContent()}
         </Row>

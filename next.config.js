@@ -9,7 +9,7 @@ module.exports = withPluginAntdLess({
     "@primary-color": "#000073",
     "@layout-header-background": "#ffffff",
     "@menu-item-height": "50px",
-    "@menu-dark-item-active-bg": "#fff",
+    "@menu-dark-item-active-bg": "#ccc",
     "@menu-dark-highlight-color": "#333",
 
     // Typography

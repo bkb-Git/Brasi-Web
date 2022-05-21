@@ -23,7 +23,7 @@ $mobile-or-table-screen: 1200px;
     justify-content: center;
     align-items: center;
     flex: 1;
-    color: #000073b2 !important;
+    color: adjust-color($color: $color-primary, $alpha: 0.3) !important;
     transition: color 0.2s, background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     span {
@@ -34,14 +34,13 @@ $mobile-or-table-screen: 1200px;
       transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
-    &:hover,
-    &:active {
+    &:hover {
       color: #000073 !important;
       font-weight: bolder;
-      background: rgb(226, 226, 226) !important;
+      background: rgba(204, 204, 204, 0.5) !important;
 
       span {
-        border-color: #000073;
+        border-color: $color-primary;
       }
     }
   }

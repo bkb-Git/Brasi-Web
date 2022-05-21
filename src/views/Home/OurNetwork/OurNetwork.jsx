@@ -4,35 +4,31 @@ import KenyaSvg from "public/svg/KenyaMapSvg";
 import UgandaMapSvg from "public/svg/UgandaMapSvg";
 import EAMapSvg from "public/svg/EastAfricanMap";
 
-import compStyle from "./OurNetwork.module.scss";
+import style from "./OurNetwork.module.scss";
 
 const { Title } = Typography;
 
-const OurNetwork = (props) => {
-  const { class: style } = props;
-
+const OurNetwork = () => {
   const renderTitle = () => {
     return (
-      <Col span={6}>
-        <Title className={style.homeTitle}>Our Network</Title>
+      <Col span={6} style={{ padding: "2em 0 4em 0" }}>
+        <Title className={style.container__title}>Our Network</Title>
       </Col>
     );
   };
 
   const renderRegions = () => {
     return (
-      <Row gutter={[32, 0]} align="middle" style={{ height: "100vh", width: "100%" }}>
-        <Col className={compStyle.map} span={8}>
-          <Col className={compStyle.titleContainer}>
-            <Title level={2}>Kenya</Title>
-          </Col>
+      <Row className={style.container__regions} gutter={[36, 0]} align="middle">
+        <Col className={style.container__regions__map} span={8}>
+          <Title level={2}>Kenya</Title>
           <KenyaSvg />
         </Col>
-        <Col className={compStyle.map} span={8}>
+        <Col className={style.container__regions__map} span={8}>
           <Title level={2}>Uganda</Title>
           <UgandaMapSvg />
         </Col>
-        <Col className={compStyle.map} span={8}>
+        <Col className={style.container__regions__map} span={8}>
           <Title level={2} style={{ position: "absolute", top: "10%" }}>
             Greater East Africa
           </Title>
@@ -43,7 +39,7 @@ const OurNetwork = (props) => {
   };
 
   return (
-    <Row justify="center" align="middle" style={{ flexDirection: "column", marginTop: "50px" }}>
+    <Row justify="center" align="middle" className={style.container}>
       {renderTitle()}
       {renderRegions()}
     </Row>

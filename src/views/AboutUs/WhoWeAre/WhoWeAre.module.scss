@@ -1,5 +1,4 @@
-@import "../../../../styles/fonts.scss";
-@import "../../../../styles/colors.scss";
+@import "/styles/abstract/variables";
 
 .header {
   height: 50vh;
@@ -19,14 +18,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 96px !important;
-  font-family: $secondary-font !important;
-  color: $primary-text-color !important;
+  font-family: $font-secondary !important;
+  color: $color-primary-white !important;
   letter-spacing: 0.88px;
 }
 
 .text {
-  font-family: $primary-font;
-  font-size: 1.2rem;
+  font-family: $font-primary;
+  font-size: 2.2rem;
   letter-spacing: 0.5px;
   word-spacing: 8px;
   color: rgba(0, 0, 0, 0.8);
@@ -34,5 +33,5 @@
 }
 
 .text1 {
-  color: $primary-color;
+  color: $color-primary;
 }

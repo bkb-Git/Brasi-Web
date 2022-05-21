@@ -1,42 +1,54 @@
 @import "/styles/abstract/variables";
-@import "/styles/abstract/fonts";
 
-.map {
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  display: flex;
+.container {
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 80%;
+  padding: 2em 0;
   background: $color-primary;
-  transition: background 0.5s, border-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-  h2 {
-    color: $color-primary-white;
-    transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &__title {
+    color: $color-primary-white !important;
+    font-weight: bold;
+    font-family: $font-secondary;
+    font-size: 4.8rem;
+    word-spacing: 3px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 4px solid $color-tertiary;
+    margin-bottom: 0 !important;
   }
 
-  svg {
-    fill: white;
-    transition: fill 0.5s, transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+  &__regions {
+    height: auto;
+    width: 98%;
 
-  &:hover {
-    background: $background-color-primary;
-    border-color: $color-primary;
+    &__map {
+      margin: 2rem 0;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 80vh;
+      background: $color-primary;
+      transition: border-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    h2 {
-      color: $color-primary;
+      h2 {
+        color: $color-primary-white;
+        transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      svg {
+        fill: $color-primary-white;
+        transition: fill 0.5s, transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      &:hover {
+        border-color: $color-primary-white;
+
+        svg {
+          transform: scale(1.05);
+        }
+      }
     }
-
-    svg {
-      fill: $color-primary;
-      transform: scale(1.05);
-    }
   }
-}
-
-.title {
-  background-image: url("/public/images/KenyanFlag.jpg");
 }
