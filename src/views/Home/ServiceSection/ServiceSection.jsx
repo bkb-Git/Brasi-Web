@@ -1,4 +1,7 @@
+import { ReadOutlined } from "@ant-design/icons";
 import { Button, Col, Row, Space, Typography } from "antd";
+
+import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 
 import style from "./ServiceSection.module.scss";
@@ -12,6 +15,8 @@ const SECTION_DIRECTION = {
 
 const ServiceSection = (props) => {
   const { details, direction = SECTION_DIRECTION.LEFT } = props;
+
+  const router = useRouter();
 
   const renderTitle = () => {
     return (
@@ -29,7 +34,7 @@ const ServiceSection = (props) => {
         <Col className={style.serviceSection__text}>
           <Paragraph>{details.paragraph}</Paragraph>
         </Col>
-        <Button type="primary" size="large">
+        <Button icon={<ReadOutlined />} type="primary" size="large" onClick={() => router.push(details.link)}>
           Read more
         </Button>
       </Space>

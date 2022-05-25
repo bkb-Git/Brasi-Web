@@ -1,0 +1,34 @@
+@import "/styles/abstract/variables";
+
+.modal {
+  max-height: 100vh;
+
+  &__header {
+    border: 2px solid $color-primary;
+    padding: 0.5em;
+    background: $color-primary;
+
+    &__title {
+      font-family: $font-secondary;
+      color: $color-primary-white !important;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 0 !important;
+    }
+
+    &__icon {
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        color: $color-primary-white;
+      }
+    }
+  }
+
+  &__content {
+    &__form {
+    }
+  }
+}

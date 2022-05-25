@@ -3,6 +3,17 @@
 .header {
   height: 50vh;
 
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 96px !important;
+    font-family: $font-secondary !important;
+    color: $color-primary-white !important;
+    letter-spacing: 0.88px;
+  }
+
   span {
     height: 100% !important;
 
@@ -10,17 +21,6 @@
       object-fit: cover;
     }
   }
-}
-
-.title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 96px !important;
-  font-family: $font-secondary !important;
-  color: $color-primary-white !important;
-  letter-spacing: 0.88px;
 }
 
 .text {

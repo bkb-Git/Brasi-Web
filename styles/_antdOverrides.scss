@@ -11,3 +11,7 @@ h4.ant-typography,
 h5.ant-typography {
   font-family: $font-secondary;
 }
+
+.ant-modal-mask {
+  max-height: 100vh;
+}

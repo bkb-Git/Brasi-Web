@@ -3,45 +3,22 @@
 $mobile-or-table-screen: 1200px;
 
 .navbar {
-  width: 70%;
+  width: auto;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   background: transparent !important;
   border-right: none;
   font-family: $font-primary;
 
   li {
-    height: 80%;
-    line-height: 2rem;
-    font-size: 1.7rem;
-    font-weight: bolder;
-    margin-right: 0.8rem;
-    background: none;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+    text-align: center;
+    width: 25%;
+    margin-right: 5rem;
     color: adjust-color($color: $color-primary, $alpha: 0.3) !important;
-    transition: color 0.2s, background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-
-    span {
-      display: flex;
-      align-items: center;
-      height: 90%;
-      border-bottom: 0.3rem solid transparent;
-      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    }
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
 
     &:hover {
       color: #000073 !important;
       font-weight: bolder;
-      background: rgba(204, 204, 204, 0.5) !important;
-
-      span {
-        border-color: $color-primary;
-      }
     }
   }
 }

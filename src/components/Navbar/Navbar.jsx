@@ -3,25 +3,35 @@ import { useRouter } from "next/dist/client/router";
 
 import styles from "./Navbar.module.scss";
 
+const { SubMenu } = Menu;
+
+const items = [
+  { label: "Home", key: "/" },
+  {
+    label: "Services",
+    key: "/services",
+    children: [
+      { label: "Clearing and Forwarding", key: "/services/Clearing-&-Forwarding" },
+      { label: "Transport and Logistics", key: "/services/Transport-&-Logistics" },
+      { label: "Warehousing Solutions", key: "/services/Warehousing-Solutions" },
+    ],
+  },
+  { label: "About Us", key: "/about" },
+];
+
 const Navbar = () => {
   const router = useRouter();
 
-  const handleRoute = (e) => router.push(`${e.key}`);
-
-  console.log(router.asPath);
+  const handleRoute = (key) => router.push(`${key}`);
 
   return (
-    <Menu theme="dark" mode="horizontal" selectedKeys={router.asPath} className={styles.navbar}>
-      <Menu.Item key="/" onClick={handleRoute}>
-        Home
-      </Menu.Item>
-      <Menu.Item key="/services" onClick={handleRoute}>
-        Services
-      </Menu.Item>
-      <Menu.Item key="/about" onClick={handleRoute}>
-        About us
-      </Menu.Item>
-    </Menu>
+    <Menu
+      mode="horizontal"
+      items={items}
+      onSelect={({ key }) => handleRoute(key)}
+      selectedKeys={router.asPath}
+      className={styles.navbar}
+    />
   );
 };
 

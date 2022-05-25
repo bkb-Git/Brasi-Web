@@ -13,7 +13,7 @@ const WhoWeAre = () => {
     return (
       <Col className={style.header} span={24}>
         <Image src={Handshake} />
-        <Title className={style.title} level={1}>
+        <Title className={style.header__title} level={1}>
           Who we are
         </Title>
       </Col>
@@ -25,7 +25,7 @@ const WhoWeAre = () => {
       <Col className={style.text} span={16}>
         <Paragraph>
           <Text strong className={style.text1}>
-            Brasi General Merchants ltd{" "}
+            Loglink Logistics Limited{" "}
           </Text>
           is a clearing and logistics company, and since then we have specialized in helping our clients to handle their
           exports and imports in the ever dynamic logistics and transportation industry. Our goal is to continuously

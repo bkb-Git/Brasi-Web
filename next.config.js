@@ -6,7 +6,7 @@ const withPluginAntdLess = require("next-plugin-antd-less");
 
 module.exports = withPluginAntdLess({
   modifyVars: {
-    "@primary-color": "#000073",
+    "@primary-color": "#023059",
     "@layout-header-background": "#ffffff",
     "@menu-item-height": "50px",
     "@menu-dark-item-active-bg": "#ccc",
