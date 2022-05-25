@@ -1,0 +1,70 @@
+@import "/styles/abstract/variables";
+
+.header {
+  height: 50vh;
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 96px !important;
+    font-family: $font-secondary !important;
+    color: $color-primary-white !important;
+    letter-spacing: 0.88px;
+  }
+
+  span {
+    height: 100% !important;
+    width: 100% !important;
+
+    img {
+      object-fit: cover;
+
+      &[id="Warehousing Solutions"] {
+        object-position: 100% 35%;
+      }
+    }
+  }
+}
+
+.text {
+  font-family: $font-primary;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  word-spacing: 8px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 5rem;
+
+  &__buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.list {
+  height: auto;
+
+  &__container {
+    margin: 3rem 0;
+
+    &__item {
+      width: 85%;
+      margin: 1.5rem 0;
+      list-style-type: disclosure-closed;
+      font-family: $font-primary;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+      word-spacing: 4px;
+
+      &::marker {
+        color: $color-primary;
+      }
+    }
+  }
+}

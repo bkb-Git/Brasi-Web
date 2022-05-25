@@ -25,22 +25,23 @@ const COMMITMENTS = {
   competetivePricing: {
     svg: { first: <MoneyBillsSvg />, second: <MarketingSvg /> },
     title: "Competetive Pricing",
-    paragraph: "Something about competetive pricing",
+    paragraph: "Ready to negotiate to achieve a win-win situation",
   },
   fastDelivery: {
     svg: { first: <FastTruckSvg />, second: <DeliverySvg /> },
     title: "Fast Delivery",
-    paragraph: "Something about speed delivery",
+    paragraph: "Efficient transport network and prompt processing",
   },
   warehousing: {
     svg: { first: <WarehouseSvg />, second: <WarehouseLogsSvg /> },
     title: "Local Warehousing Solutions",
-    paragraph: "Something about local warehousing",
+    paragraph:
+      "We offer suggestions according to our client's needs from a range of our strategically located warehouse partners.",
   },
   timelyUpdate: {
     svg: { first: <GaugeSvg />, second: <UpdateSvg /> },
     title: "Timely Updates",
-    paragraph: "Timely information on client status code",
+    paragraph: "Dedicated to keeping our clients informed through out the transaction process.",
   },
 };
 

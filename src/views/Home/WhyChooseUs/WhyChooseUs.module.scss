@@ -5,7 +5,7 @@
   height: auto !important;
   width: auto !important;
   font-size: 4em !important;
-  color: #ccc !important;
+  color: $color-tertiary !important;
   transform: translate(-50%, -50%);
 }
 
@@ -39,12 +39,12 @@
 
       &[id="prevArrow"] {
         @extend .arrow;
-        left: -1em !important;
+        left: -2.5em !important;
       }
 
       &[id="nextArrow"] {
         @extend .arrow;
-        right: -2em !important;
+        right: -3.5em !important;
       }
 
       &:hover {
