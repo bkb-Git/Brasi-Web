@@ -1,12 +1,12 @@
 const COLORS = {
-  white: "#fff",
-  darkBlue: "#000073",
+  white: "#ccc",
+  darkBlue: "#023059",
   gray: "#e6e6e6",
   books: "#f2f2f2",
   skinTone1: "#a0616a",
   skinTone2: "#ffb8b8",
   silver: "#ccc",
-  primary: "#000073",
+  primary: "#023059",
   pantsAndShoes: "#2f2e41",
   table: "#3f3d56",
 };

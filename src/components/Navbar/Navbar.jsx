@@ -1,9 +1,8 @@
+import { useEffect } from "react";
 import { Menu } from "antd";
 import { useRouter } from "next/dist/client/router";
 
 import styles from "./Navbar.module.scss";
-
-const { SubMenu } = Menu;
 
 const items = [
   { label: "Home", key: "/" },
@@ -19,14 +18,25 @@ const items = [
   { label: "About Us", key: "/about" },
 ];
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { isDesktop, closeDrawer } = props;
   const router = useRouter();
+
+  useEffect(() => {
+    const handleStop = () => closeDrawer(false);
+
+    router.events.on("routeChangeComplete", handleStop);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleStop);
+    };
+  }, [router]);
 
   const handleRoute = (key) => router.push(`${key}`);
 
   return (
     <Menu
-      mode="horizontal"
+      mode={isDesktop ? "horizontal" : "vertical"}
       items={items}
       onSelect={({ key }) => handleRoute(key)}
       selectedKeys={router.asPath}

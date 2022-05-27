@@ -1,7 +1,8 @@
 function LogoNormal(props) {
-  const { first, second } = props.color;
+  const { color, width, height } = props;
+  const { first, second } = color;
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="70%" version="1" viewBox="0 0 1500 1500">
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} version="1" viewBox="0 0 1500 1500">
       <path fill={second} d="M0 7500V0h15000v900H1110v14100H0V7500z" transform="matrix(.1 0 0 -.1 0 1500)"></path>
       <path
         fill={first}

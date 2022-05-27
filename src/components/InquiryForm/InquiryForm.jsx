@@ -1,15 +1,42 @@
-import { MailFilled, SendOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Row, Typography } from "antd";
+import { useState, useEffect } from "react";
+import { CheckCircleOutlined, MailFilled, SendOutlined } from "@ant-design/icons";
+import { Button, Col, Form, Input, Modal, Result, Row, Typography } from "antd";
 
 import style from "./InquiryForm.module.scss";
 
+const { Title } = Typography;
+const { TextArea } = Input;
+
 const InquiryForm = (props) => {
   const { visible, setVisible } = props;
+  const [formState, setFormState] = useState({ loading: false, submited: false });
 
-  const { Title } = Typography;
-  const { TextArea } = Input;
+  const [form] = Form.useForm();
 
-  const handleOk = () => setVisible(false);
+  useEffect(() => {
+    if (formState.submited) {
+      setTimeout(() => {
+        setVisible(false);
+        setFormState({ submited: false });
+      }, 1000);
+    }
+  }, [formState.submited]);
+
+  const handleOk = () => {
+    setFormState({ loading: true });
+
+    form
+      .validateFields()
+      .then((values) => {
+        form.resetFields();
+        console.log(values);
+      })
+      .then(() => setTimeout(() => setFormState({ loading: false, submited: true }), 2500))
+      .catch((info) => {
+        console.log("Validate Failed:", info);
+        setFormState({ loading: false });
+      });
+  };
 
   const handleCancel = () => setVisible(false);
 
@@ -23,8 +50,11 @@ const InquiryForm = (props) => {
 
   const emailInput = () => {
     return (
-      <Form.Item name="email" rules={[{ required: true, message: "Please provide your email address!" }]}>
-        <Input placeholder="Email Address" type="email" />
+      <Form.Item
+        name="email"
+        rules={[{ required: true, message: "Please provide your email address!", type: "email" }]}
+      >
+        <Input placeholder="Email Address" />
       </Form.Item>
     );
   };
@@ -45,15 +75,48 @@ const InquiryForm = (props) => {
     );
   };
 
-  const renderContent = () => {
+  const customizedFooter = () => {
+    if (formState.submited) return null;
+    return (
+      <>
+        <Button type="ghost" onClick={handleCancel}>
+          Cancel
+        </Button>
+        ,
+        <Button loading={formState.loading} type="primary" icon={<SendOutlined />} onClick={handleOk} htmlType="submit">
+          Send
+        </Button>
+      </>
+    );
+  };
+
+  const renderForm = () => {
     return (
       <Col span={20} className={style.modal__content}>
-        <Form layout="vertical" className={style.modal__content__form} requiredMark={false}>
+        <Form
+          form={form}
+          preserve={false}
+          layout="vertical"
+          className={style.modal__content__form}
+          requiredMark={false}
+        >
           {nameInput()}
           {emailInput()}
           {subjectInput()}
           {descriptionInput()}
         </Form>
+      </Col>
+    );
+  };
+
+  const renderSuccess = () => {
+    return (
+      <Col span={20}>
+        <Result
+          icon={<CheckCircleOutlined style={{ fill: "#023059 !important" }} />}
+          status="success"
+          title="Thank you for speaking to us!"
+        />
       </Col>
     );
   };
@@ -75,20 +138,22 @@ const InquiryForm = (props) => {
     );
   };
 
+  const renderContent = () => {
+    if (formState.submited) return renderSuccess();
+
+    return renderForm();
+  };
+
   return (
     <Modal
       centered
       className={style.modal}
       visible={visible}
-      width={1000}
-      footer={[
-        <Button type="ghost" onClick={handleCancel}>
-          Cancel
-        </Button>,
-        <Button type="primary" icon={<SendOutlined />} onClick={handleOk}>
-          Send
-        </Button>,
-      ]}
+      destroyOnClose
+      width={600}
+      onCancel={handleCancel}
+      onOk={handleOk}
+      footer={[customizedFooter()]}
     >
       <Row gutter={[0, 36]} justify="center" align="middle">
         {renderHeader()}

@@ -32,11 +32,23 @@ $text-color-secondary: $color-grey-fair;
 
 $text-shadow-light: 0 0 2rem #000;
 
-$radial-gradient: radial-gradient(
-  circle at top,
-  $color-secondary,
-  $color-tertiary
-);
+$radial-gradient: radial-gradient(circle at top, $color-secondary, $color-tertiary);
 
 $background-color-primary: $color-primary-white;
 $background-color-secondary: $color-grey-light;
+
+// Small devices (landscape phones, 576px and up)
+
+$landscape-phones: 576px;
+
+// Medium devices (tablets, 768px and up)
+
+$tablets: 768px;
+
+// Large devices (desktops, 992px and up)
+
+$desktops: 992px;
+
+// Extra large devices (large desktops, 1200px and up)
+
+$large-desktops: 1200px;

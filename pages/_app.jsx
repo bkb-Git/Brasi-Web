@@ -1,5 +1,7 @@
-import Head from "next/head";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+
+import Head from "next/head";
 
 import Loader from "src/components/Loader";
 import MainLayout from "src/components/layout/MainLayout";
@@ -93,6 +95,8 @@ const MyApp = ({ Component, pageProps }) => {
     setLoading(false);
   });
 
+  const isDesktop = useMediaQuery({ minWidth: 1200 });
+
   if (loading) return <Loader />;
 
   return (
@@ -103,8 +107,8 @@ const MyApp = ({ Component, pageProps }) => {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"></link>
       </Head>
-      <MainLayout>
-        <Component services={SERVICES} {...pageProps} />
+      <MainLayout breakpoint={isDesktop}>
+        <Component breakpoint={isDesktop} services={SERVICES} {...pageProps} />
       </MainLayout>
     </>
   );
