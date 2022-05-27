@@ -8,12 +8,12 @@ import style from "./MainLayout.module.scss";
 const { Content } = Layout;
 
 const MainLayout = (props) => {
-  const { children } = props;
+  const { children, breakpoint } = props;
   return (
     <Layout className={style.layout}>
-      <HeaderLayout />
+      <HeaderLayout isDesktop={breakpoint} />
       <Content style={{ background: "white" }}>{children}</Content>
-      <FooterLayout />
+      <FooterLayout isDesktop={breakpoint} />
     </Layout>
   );
 };

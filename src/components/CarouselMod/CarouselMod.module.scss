@@ -1,0 +1,33 @@
+@import "/styles/abstract/variables";
+
+.arrow {
+  height: auto !important;
+  width: auto !important;
+  font-size: 4em !important;
+  color: $color-tertiary !important;
+  transform: translate(-50%, -50%);
+}
+
+.carousel {
+  span {
+    svg {
+      transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &[id="prevArrow"] {
+      @extend .arrow;
+      left: -2.5em !important;
+    }
+
+    &[id="nextArrow"] {
+      @extend .arrow;
+      right: -3.5em !important;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

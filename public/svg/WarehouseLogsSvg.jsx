@@ -1,3 +1,16 @@
+const COLORS = {
+  white: "#fff",
+  darkBlue: "#023059",
+  gray: "#e6e6e6",
+  books: "#f2f2f2",
+  skinTone1: "#a0616a",
+  skinTone2: "#ffb8b8",
+  silver: "#ccc",
+  primary: "#023059",
+  pantsAndShoes: "#2f2e41",
+  table: "#3f3d56",
+};
+
 function WarehouseLogsSvg() {
   return (
     <svg
@@ -11,7 +24,7 @@ function WarehouseLogsSvg() {
         fill="#e6e6e6"
         d="M681.591 421.111c36.426-91.067 25.407-192.754-21.572-270.852l-491.774 68.092 471.276-98.217C440.898-127.55 54.308 36.736 91.573 349.455z"
       ></path>
-      <path fill="#000073" d="M76.753 320.445H703.279V515.54H76.753z"></path>
+      <path fill={COLORS.darkBlue} d="M76.753 320.445H703.279V515.54H76.753z"></path>
       <path
         fill="#ffb8b8"
         d="M251.485 296.652c5.621 4.366 7.677 5.775 8.874 5.596 58 16.89 7.154 36.683-21.026 3.085z"

@@ -1,9 +1,7 @@
 @import "/styles/abstract/_variables.scss";
 
-// #000073ee
-
 .landingPage {
-  height: calc(100vh - 76px);
+  height: calc(100vh - 7.6rem);
   background-color: $background-color-primary;
 
   &__title {
@@ -18,9 +16,9 @@
       display: flex;
       align-items: center;
       color: $color-primary-white;
-      font-size: 64px;
+      font-size: 7rem;
       font-family: $font-secondary;
-      margin: 0 0 0 35px;
+      margin: 0 0 0 3.5rem;
       text-align: center;
     }
   }

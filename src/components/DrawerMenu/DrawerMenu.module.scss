@@ -1,0 +1,10 @@
+@import "/styles/abstract/variables";
+
+.drawer {
+  &__companyLogo {
+  }
+
+  &__divider {
+    border-color: $color-tertiary;
+  }
+}

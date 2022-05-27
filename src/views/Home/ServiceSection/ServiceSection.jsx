@@ -18,7 +18,7 @@ const ServiceSection = (props) => {
 
   const router = useRouter();
 
-  const renderTitle = () => {
+  const title = () => {
     return (
       <div className={style.serviceSection__header}>
         <Title level={1} className={style.serviceSection__title}>
@@ -28,7 +28,7 @@ const ServiceSection = (props) => {
     );
   };
 
-  const renderParagraph = () => {
+  const paragraph = () => {
     return (
       <Space direction="vertical" size="large">
         <Col className={style.serviceSection__text}>
@@ -43,10 +43,10 @@ const ServiceSection = (props) => {
 
   const renderDetails = () => {
     return (
-      <Col xs={20} lg={12} style={{ zIndex: 2, height: "100%" }}>
+      <Col xs={20} lg={11} style={{ zIndex: 2, height: "100%" }}>
         <Row gutter={[0, 48]} justify="center" align="middle" className={style.serviceSection__info}>
-          {renderTitle()}
-          {renderParagraph()}
+          {title()}
+          {paragraph()}
         </Row>
       </Col>
     );
@@ -54,7 +54,7 @@ const ServiceSection = (props) => {
 
   const renderImage = () => {
     return (
-      <Col xs={20} lg={16} flex={1}>
+      <Col xs={20} lg={13}>
         <div className={style.serviceSection__image}>
           <Image src={details.image} alt={details.title} style={{ zIndex: 0 }} layout="fill" />
         </div>

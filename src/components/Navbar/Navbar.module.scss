@@ -1,7 +1,5 @@
 @import "/styles/abstract/variables";
 
-$mobile-or-table-screen: 1200px;
-
 .navbar {
   width: auto;
   height: 100%;
@@ -23,19 +21,18 @@ $mobile-or-table-screen: 1200px;
   }
 }
 
-// @media only screen and (max-width: $mobile-or-table-screen) {
-//   .navbar {
-//     color: #333;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     border-right: none;
-//     height: 40%;
+@media (max-width: $tablets) {
+  .navbar {
+    height: 40%;
 
-//     li {
-//       flex: 1;
-//       width: 100%;
-//       display: flex;
-//       align-items: center;
-//     }
-//   }
-// }
+    li {
+      flex: 1;
+      width: 100%;
+      margin-bottom: 5rem !important;
+
+      [class="ant-menu-submenu-title"] {
+        padding-right: 16px;
+      }
+    }
+  }
+}

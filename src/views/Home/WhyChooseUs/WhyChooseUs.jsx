@@ -1,5 +1,4 @@
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import { Row, Typography, Col, Carousel } from "antd";
+import { Row, Typography, Col } from "antd";
 
 import ClockSvg from "public/svg/ClockSvg";
 import CustomerCareSvg from "public/svg/CustomerCareSvg";
@@ -11,6 +10,7 @@ import MoneyBillsSvg from "public/svg/MoneyBillsSvg";
 import UpdateSvg from "public/svg/UpdateSvg";
 import WarehouseLogsSvg from "public/svg/WarehouseLogsSvg";
 import WarehouseSvg from "public/svg/WarehouseSvg";
+import CarouselMod from "src/components/CarouselMod";
 
 import CommitmentCard from "src/components/CommitmentCard/CommitmentCard";
 
@@ -61,20 +61,13 @@ const WhyChooseUs = () => {
   const renderCarousel = () => {
     return (
       <Col span={16}>
-        <Carousel
-          arrows
-          autoplay
-          fade
-          prevArrow={<LeftOutlined className="arrow" id="prevArrow" />}
-          nextArrow={<RightOutlined className="arrow" id="nextArrow" />}
-          className={style.container__carousel}
-        >
+        <CarouselMod autoplay>
           <CommitmentCard commitment={COMMITMENTS.customerCare} />
           <CommitmentCard right commitment={COMMITMENTS.competetivePricing} />
           <CommitmentCard commitment={COMMITMENTS.fastDelivery} />
           <CommitmentCard right commitment={COMMITMENTS.warehousing} />
           <CommitmentCard commitment={COMMITMENTS.timelyUpdate} />
-        </Carousel>
+        </CarouselMod>
       </Col>
     );
   };
