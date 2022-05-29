@@ -11,6 +11,7 @@
     color: $color-primary !important;
     margin-bottom: 0 !important;
     font-family: $font-secondary !important;
+    margin-left: 1.5rem;
   }
 
   svg {
@@ -19,11 +20,6 @@
 }
 
 @media (min-width: $landscape-phones) {
-  .logo {
-    &__title {
-      margin-left: 1.5rem;
-    }
-  }
 }
 
 @media (min-width: $tablets) {

@@ -1,4 +1,4 @@
-import { MailOutlined, PhoneOutlined } from "@ant-design/icons";
+import { MailOutlined, PhoneOutlined, UserOutlined } from "@ant-design/icons";
 import { Card, Col, Row, Typography } from "antd";
 
 import Image from "next/image";
@@ -8,7 +8,7 @@ import style from "./TeamCard.module.scss";
 const { Title, Paragraph } = Typography;
 
 const TeamCard = (props) => {
-  const { title, contact, email, img } = props.member;
+  const { title, name, contact, email, img } = props.member;
 
   const renderImage = () => {
     return (
@@ -24,6 +24,15 @@ const TeamCard = (props) => {
         <Title className={style.container__card__footer__header} level={4}>
           {title}
         </Title>
+      </Col>
+    );
+  };
+
+  const renderName = () => {
+    return (
+      <Col span={18} className={style.container__card__footer__paragraph}>
+        <UserOutlined className={style.container__card__footer__paragraph__icon} />
+        <Title className={style.container__card__footer__paragraph__name}>{name}</Title>
       </Col>
     );
   };
@@ -51,12 +60,13 @@ const TeamCard = (props) => {
   };
 
   return (
-    <Col className={style.container} span={8}>
+    <Col xs={24} sm={24} lg={8} className={style.container}>
       <Card className={style.container__card} bordered bodyStyle={{ height: "100%", padding: "0" }}>
         <Row justify="space-between" align="middle" style={{ height: "100%" }}>
           {renderImage()}
           <Row justify="center" align="middle" className={style.container__card__footer}>
             {renderTitle()}
+            {renderName()}
             {renderNumber()}
             {renderEmail()}
           </Row>

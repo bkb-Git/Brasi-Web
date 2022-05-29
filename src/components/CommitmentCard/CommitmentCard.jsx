@@ -1,16 +1,21 @@
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, Grid } from "antd";
 
 import style from "./CommitmentCard.module.scss";
 
 const { Title, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 const CommitmentCard = (props) => {
   const { commitment, right } = props;
   const { svg, title, paragraph } = commitment;
 
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrLaptop = (xs || sm) && !lg;
+
   const renderSection1 = () => {
+    if (isMobileOrLaptop) return null;
     return (
-      <Col className={style.slide__section1} span={12}>
+      <Col className={style.slide__section1} lg={12}>
         {svg.second}
       </Col>
     );
@@ -18,19 +23,19 @@ const CommitmentCard = (props) => {
 
   const renderSection2 = () => {
     return (
-      <Col className={style.slide__section2} span={12}>
-        <Row gutter={[0, 48]} justify="center" align="middle">
+      <Col className={style.slide__section2} xs={22} sm={22} lg={12}>
+        <Row gutter={[0, 36]} justify="center" align="middle" className={style.slide__section2__slideContainer}>
           <Col span={24}>
-            <Row gutter={[0, 32]} justify="center" align="middle" style={{ width: "100%" }}>
-              <Col span={24} className={style.slide__section2__icon}>
+            <Row gutter={[0, 16]} justify="center" align="middle" style={{ width: "100%" }}>
+              <Col span={24} className={style.slide__section2__slideContainer__icon}>
                 {svg.first}
               </Col>
-              <Col span={24} className={style.slide__section2__title}>
+              <Col span={24} className={style.slide__section2__slideContainer__title}>
                 <Title level={4}>{title}</Title>
               </Col>
             </Row>
           </Col>
-          <Col span={14}>
+          <Col span={18} style={{ padding: "0 16px" }}>
             <Paragraph>{paragraph}</Paragraph>
           </Col>
         </Row>

@@ -1,4 +1,4 @@
-import { Row, Typography, Col } from "antd";
+import { Row, Typography, Col, Grid, Divider } from "antd";
 
 import ClockSvg from "public/svg/ClockSvg";
 import CustomerCareSvg from "public/svg/CustomerCareSvg";
@@ -47,21 +47,33 @@ const COMMITMENTS = {
 
 const { Title } = Typography;
 
+const { useBreakpoint } = Grid;
+
 const WhyChooseUs = () => {
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
   const renderTitle = () => {
     return (
-      <Row justify="center" align="middle" style={{ width: "100%" }}>
-        <Col span={8} style={{ marginBottom: "4em" }}>
-          <Title className={style.container__title}>Why Choose Us</Title>
-        </Col>
-      </Row>
+      <Col xs={20} sm={20} lg={20}>
+        <Row justify="center" align="middle">
+          <Col xs={20} sm={20} lg={8} className={style.container__header}>
+            <Title className={style.container__header__title}>Why Choose Us</Title>
+          </Col>
+          {isMobileOrTablet && (
+            <Col xs={12} sm={12} className={style.container__divider}>
+              <Divider className={style.container__divider__line} />
+            </Col>
+          )}
+        </Row>
+      </Col>
     );
   };
 
   const renderCarousel = () => {
     return (
-      <Col span={16}>
-        <CarouselMod autoplay>
+      <Col xs={20} sm={20} lg={16}>
+        <CarouselMod autoplay arrows>
           <CommitmentCard commitment={COMMITMENTS.customerCare} />
           <CommitmentCard right commitment={COMMITMENTS.competetivePricing} />
           <CommitmentCard commitment={COMMITMENTS.fastDelivery} />

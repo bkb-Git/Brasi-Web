@@ -30,7 +30,7 @@ const ValueCard = (props) => {
   };
 
   return (
-    <Col className={style.value} span={6}>
+    <Col className={style.value} xs={24} sm={24} md={12} lg={6}>
       <Card bordered={false} className={style.value__card} bodyStyle={{ height: "100%", padding: "2em 0px" }}>
         <Row justify="center" align="middle" style={{ height: "100%" }}>
           {renderHeader()}
