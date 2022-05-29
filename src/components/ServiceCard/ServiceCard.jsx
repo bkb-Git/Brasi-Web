@@ -9,13 +9,11 @@ const ServiceCard = (props) => {
   const { services: serviceObj } = props;
   const { title, image, fullParagraph, services } = serviceObj;
 
-  console.log(services);
-
   const renderTitle = () => {
     return (
-      <Col className={style.header} span={24}>
+      <Col xs={24} sm={24} lg={24} className={style.service__header}>
         <Image id={title} src={image} />
-        <Title className={style.header__title} level={1}>
+        <Title className={style.service__header__title} level={1}>
           {title}
         </Title>
       </Col>
@@ -24,7 +22,7 @@ const ServiceCard = (props) => {
 
   const renderText = () => {
     return (
-      <Col className={style.text} span={16}>
+      <Col xs={20} sm={20} lg={16} className={style.service__text}>
         <Paragraph>{fullParagraph}</Paragraph>
       </Col>
     );
@@ -32,11 +30,11 @@ const ServiceCard = (props) => {
 
   const renderList = () => {
     return (
-      <Col className={style.list} span={16}>
-        <Row gutter={[0, 16]} className={style.list__container} justify="center" align="middle">
+      <Col xs={19} sm={19} lg={16} className={style.service__list}>
+        <Row gutter={[0, 16]} className={style.service__list__container} justify="center" align="middle">
           {services.map((item, index) => {
             return (
-              <li key={index + 1} className={style.list__container__item}>
+              <li key={index + 1} className={style.service__list__container__item}>
                 {item}
               </li>
             );
@@ -47,7 +45,7 @@ const ServiceCard = (props) => {
   };
 
   return (
-    <Row justify="center" align="middle">
+    <Row justify="center" align="middle" className={style.service}>
       {renderTitle()}
       {renderText()}
       {renderList()}

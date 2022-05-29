@@ -11,9 +11,9 @@ const { Title, Paragraph, Text } = Typography;
 const WhoWeAre = () => {
   const renderTitle = () => {
     return (
-      <Col className={style.header} span={24}>
+      <Col lg={24} className={style.whoWeAre__header}>
         <Image src={Handshake} />
-        <Title className={style.header__title} level={1}>
+        <Title className={style.whoWeAre__header__title} level={1}>
           Who we are
         </Title>
       </Col>
@@ -22,9 +22,9 @@ const WhoWeAre = () => {
 
   const renderText = () => {
     return (
-      <Col className={style.text} span={16}>
+      <Col xs={20} sm={20} lg={16} className={style.whoWeAre__text}>
         <Paragraph>
-          <Text strong className={style.text1}>
+          <Text strong className={style.whoWeAre__text1}>
             Loglink Logistics Limited{" "}
           </Text>
           is a clearing and logistics company, and since then we have specialized in helping our clients to handle their
@@ -40,7 +40,7 @@ const WhoWeAre = () => {
   };
 
   return (
-    <Row justify="center" align="center" style={{ marginBottom: "5rem" }}>
+    <Row justify="center" align="center" className={style.whoWeAre}>
       {renderTitle()}
       {renderText()}
     </Row>

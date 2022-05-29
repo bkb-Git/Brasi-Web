@@ -44,7 +44,7 @@ const HeaderLayout = () => {
     if ((xs || sm) && !lg) return null;
     return (
       <Col flex={1} className={style.header__content__navbar}>
-        <Navbar />
+        <Navbar closeDrawer={setMenuVisible} />
       </Col>
     );
   };

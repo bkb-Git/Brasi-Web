@@ -20,7 +20,8 @@ const items = [
 
 const { useBreakpoint } = Grid;
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { closeDrawer } = props;
   const router = useRouter();
 
   const { xs, sm, lg } = useBreakpoint();

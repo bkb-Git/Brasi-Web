@@ -7,18 +7,20 @@ const { Title, Paragraph } = Typography;
 const MissionStatement = () => {
   const renderTitle = () => {
     return (
-      <Row justify="center" align="middle" style={{ width: "100%", flexDirection: "column" }}>
-        <Col span={8} style={{ width: "30%" }}>
-          <Title className={style.title}>Mission Statement</Title>
-        </Col>
-      </Row>
+      <Col xs={20} sm={20} lg={24} className={style.missionStatement__header}>
+        <Row justify="center" align="middle">
+          <Col xs={20} sm={20} lg={8}>
+            <Title className={style.missionStatement__header__title}>Mission Statement</Title>
+          </Col>
+        </Row>
+      </Col>
     );
   };
 
   const renderText = () => {
     return (
-      <Col className={style.text} span={16}>
-        <Paragraph>
+      <Col xs={20} sm={20} lg={16} className={style.missionStatement__details} span={16}>
+        <Paragraph className={style.missionStatement__details__text}>
           To constantly exceed customer expectations by providing flexible, reliable and superior freight, forwarding
           and global transportation solutions which include air, sea, customs brokerage and logistics services.
         </Paragraph>
@@ -27,7 +29,7 @@ const MissionStatement = () => {
   };
 
   return (
-    <Row justify="center" align="middle" style={{ marginBottom: "5rem" }}>
+    <Row justify="center" align="middle" className={style.missionStatement}>
       {renderTitle()}
       {renderText()}
     </Row>
