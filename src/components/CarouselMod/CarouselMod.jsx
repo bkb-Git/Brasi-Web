@@ -8,7 +8,6 @@ const CarouselMod = (props) => {
   return (
     <Carousel
       {...args}
-      arrows
       prevArrow={<LeftOutlined className="arrow" id="prevArrow" />}
       nextArrow={<RightOutlined className="arrow" id="nextArrow" />}
       className={style.carousel}

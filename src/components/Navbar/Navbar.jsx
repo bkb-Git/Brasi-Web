@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Menu } from "antd";
+import { Grid, Menu } from "antd";
 import { useRouter } from "next/dist/client/router";
 
 import styles from "./Navbar.module.scss";
@@ -18,9 +18,13 @@ const items = [
   { label: "About Us", key: "/about" },
 ];
 
-const Navbar = (props) => {
-  const { isDesktop, closeDrawer } = props;
+const { useBreakpoint } = Grid;
+
+const Navbar = () => {
   const router = useRouter();
+
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) & !lg;
 
   useEffect(() => {
     const handleStop = () => closeDrawer(false);
@@ -36,7 +40,7 @@ const Navbar = (props) => {
 
   return (
     <Menu
-      mode={isDesktop ? "horizontal" : "vertical"}
+      mode={isMobileOrTablet ? "vertical" : "horizontal"}
       items={items}
       onSelect={({ key }) => handleRoute(key)}
       selectedKeys={router.asPath}

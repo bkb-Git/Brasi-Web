@@ -9,7 +9,7 @@ import style from "./LandingSection.module.scss";
 const LandingSection = () => {
   return (
     <Row className={style.landingPage}>
-      <Col style={{ zIndex: 0 }}>
+      <Col style={{ zIndex: 0 }} className={style.landingPage__imageContainer}>
         <Image src={PortImage} alt="Port Image" style={{ zIndex: 0 }} />
       </Col>
       <Col className={style.landingPage__title}>

@@ -9,7 +9,7 @@ const { Title } = Typography;
 const CompanyLogo = (props) => {
   const { flex, responsiveWidths } = props;
   return (
-    <Col flex={flex} {...responsiveWidths} className={style.logo}>
+    <Col {...responsiveWidths} className={style.logo}>
       <LogoSvg width="100%" height="40%" color={{ first: "#023059", second: "#0469c2" }} />
       <Title className={style.logo__title} level={4}>
         Loglink Logistics

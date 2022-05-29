@@ -9,7 +9,7 @@ $color-primary-black: #000;
 $color-grey-light: #ccc;
 $color-grey-fair: #999;
 $color-grey-dark: #171717;
-$color-grey-dark-fade: rgba(0, 0, 0, 0.4);
+$color-grey-dark-fade: rgba(0, 0, 0, 0.85);
 $color-error-primary: #b33030;
 $color-error-secondary: rgba(216, 77, 71, 1);
 $color-success-primary: #00a84f;
@@ -29,6 +29,7 @@ $box-shadow-error: 0 0.1rem 2rem 0 $color-error-primary;
 
 $text-color-primary: $color-grey-dark;
 $text-color-secondary: $color-grey-fair;
+$text-color-tertiary: $color-grey-dark-fade;
 
 $text-shadow-light: 0 0 2rem #000;
 
@@ -36,6 +37,13 @@ $radial-gradient: radial-gradient(circle at top, $color-secondary, $color-tertia
 
 $background-color-primary: $color-primary-white;
 $background-color-secondary: $color-grey-light;
+
+$section-spacing-desktop: 17rem;
+$section-spacing-small-devices: 10rem;
+
+// Small devices (576px and less)
+
+$phones: 576px;
 
 // Small devices (landscape phones, 576px and up)
 

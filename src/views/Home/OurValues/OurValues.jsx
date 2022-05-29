@@ -1,15 +1,17 @@
-import { Col, Row, Typography } from "antd";
+import { Col, Row, Typography, Grid, Divider } from "antd";
 import BuisnessTimeSvg from "public/svg/BuisnessTimeSvg";
 
 import ConsistencySvg from "public/svg/ConsistencySvg";
 import MagnifyingGlassSvg from "public/svg/MagnifyingGlassSvg";
 import ScalesSvg from "public/svg/ScalesSvg";
+import CarouselMod from "src/components/CarouselMod";
 
 import ValueCard from "src/components/ValueCard";
 
 import style from "./OurValues.module.scss";
 
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const VALUES = {
   Integrity: {
@@ -31,8 +33,24 @@ const VALUES = {
 };
 
 const OurValues = () => {
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
   const renderTitle = () => {
-    return <Title className={style.container__title}>Our Values</Title>;
+    return (
+      <Col xs={20} sm={20} lg={20}>
+        <Row justify="center" align="center">
+          <Col xs={24} sm={24} lg={8} className={style.container__header}>
+            <Title className={style.container__header__title}>Our Values</Title>
+          </Col>
+          {isMobileOrTablet && (
+            <Col xs={12} sm={12} className={style.container__divider}>
+              <Divider className={style.container__divider__line} />
+            </Col>
+          )}
+        </Row>
+      </Col>
+    );
   };
 
   const renderValues = () => {
@@ -46,11 +64,22 @@ const OurValues = () => {
     );
   };
 
+  const renderCarousel = () => {
+    return (
+      <CarouselMod arrows autoplay>
+        <ValueCard value={VALUES.Integrity} icon={<ScalesSvg />} />
+        <ValueCard value={VALUES.Consistency} icon={<ConsistencySvg />} />
+        <ValueCard value={VALUES.Accountability} icon={<MagnifyingGlassSvg />} />
+        <ValueCard value={VALUES.Professionalism} icon={<BuisnessTimeSvg />} />
+      </CarouselMod>
+    );
+  };
+
   return (
-    <Row gutter={[0, 25]} className={style.container} justify="center" align="middle">
-      <Col xs={18}>{renderTitle()}</Col>
+    <Row gutter={[0, 48]} className={style.container} justify="center" align="middle">
+      {renderTitle()}
       <Col xs={20} lg={16} xl={22}>
-        {renderValues()}
+        {isMobileOrTablet ? renderCarousel() : renderValues()}
       </Col>
     </Row>
   );

@@ -6,6 +6,10 @@
   font-size: 4em !important;
   color: $color-tertiary !important;
   transform: translate(-50%, -50%);
+
+  @media (max-width: $desktops) {
+    font-size: 2em !important;
+  }
 }
 
 .carousel {
@@ -27,6 +31,19 @@
     &:hover {
       svg {
         transform: scale(1.2);
+      }
+    }
+  }
+
+  @media (max-width: $desktops) {
+    span {
+      &[id="prevArrow"] {
+        left: -5% !important;
+      }
+
+      &[id="nextArrow"] {
+        left: 105% !important;
+        right: unset !important;
       }
     }
   }

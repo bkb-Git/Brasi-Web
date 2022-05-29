@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import style from "./DrawerMenu.module.scss";
 
 const DrawerMenu = (props) => {
-  const { isDesktop, menuVisible, setMenuVisible } = props;
+  const { menuVisible, setMenuVisible } = props;
 
   return (
     <Drawer
@@ -23,7 +23,7 @@ const DrawerMenu = (props) => {
       </Row>
       <Divider className={style.drawer__divider} />
       <Col span={24} className={style.drawer__nav}>
-        <Navbar isDesktop={isDesktop} closeDrawer={setMenuVisible} />
+        <Navbar closeDrawer={setMenuVisible} />
       </Col>
     </Drawer>
   );

@@ -1,5 +1,5 @@
 import { ReadOutlined } from "@ant-design/icons";
-import { Button, Col, Row, Space, Typography } from "antd";
+import { Button, Col, Row, Space, Typography, Grid, Divider } from "antd";
 
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import Image from "next/image";
 import style from "./ServiceSection.module.scss";
 
 const { Paragraph, Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const SECTION_DIRECTION = {
   RIGHT: "right",
@@ -18,12 +19,20 @@ const ServiceSection = (props) => {
 
   const router = useRouter();
 
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
   const title = () => {
     return (
       <div className={style.serviceSection__header}>
         <Title level={1} className={style.serviceSection__title}>
           {details.title}
         </Title>
+        {isMobileOrTablet && (
+          <Col className={style.serviceSection__header__divider}>
+            <Divider className={style.serviceSection__header__divider__line} />
+          </Col>
+        )}
       </div>
     );
   };
@@ -43,9 +52,9 @@ const ServiceSection = (props) => {
 
   const renderDetails = () => {
     return (
-      <Col xs={20} lg={11} style={{ zIndex: 2, height: "100%" }}>
-        <Row gutter={[0, 48]} justify="center" align="middle" className={style.serviceSection__info}>
-          {title()}
+      <Col xs={20} sm={20} lg={11} className={style.serviceSection__details}>
+        <Row gutter={[0, 48]} justify="center" align="middle" className={style.serviceSection__details__info}>
+          {!isMobileOrTablet && title()}
           {paragraph()}
         </Row>
       </Col>
@@ -54,8 +63,8 @@ const ServiceSection = (props) => {
 
   const renderImage = () => {
     return (
-      <Col xs={20} lg={13}>
-        <div className={style.serviceSection__image}>
+      <Col xs={20} sm={20} lg={13} className={style.serviceSection__imgContainer}>
+        <div className={style.serviceSection__imgContainer__image}>
           <Image src={details.image} alt={details.title} style={{ zIndex: 0 }} layout="fill" />
         </div>
       </Col>
@@ -63,9 +72,10 @@ const ServiceSection = (props) => {
   };
 
   const renderContent = () => {
-    if (direction === SECTION_DIRECTION.RIGHT) {
+    if (isMobileOrTablet || direction === SECTION_DIRECTION.RIGHT) {
       return (
         <>
+          {isMobileOrTablet && title()}
           {renderImage()}
           {renderDetails()}
         </>
@@ -80,14 +90,15 @@ const ServiceSection = (props) => {
     );
   };
 
+  const renderClassName = () => {
+    if (isMobileOrTablet) return style.serviceSection;
+    return direction === SECTION_DIRECTION.RIGHT ? style.serviceSectionRight : style.serviceSection;
+  };
+
   return (
-    <Row
-      justify="center"
-      align="middle"
-      className={direction === SECTION_DIRECTION.RIGHT ? style.serviceSectionRight : style.serviceSection}
-    >
-      <Col xs={22} lg={20} xxl={16}>
-        <Row justify="center" align="middle">
+    <Row justify={isMobileOrTablet ? "space-between" : "center"} align="middle" className={renderClassName()}>
+      <Col xs={24} sm={24} lg={20} xxl={16}>
+        <Row gutter={isMobileOrTablet && [0, 16]} justify="center" align="middle">
           {renderContent()}
         </Row>
       </Col>

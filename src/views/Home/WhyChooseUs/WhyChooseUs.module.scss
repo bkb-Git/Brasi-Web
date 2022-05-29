@@ -3,20 +3,24 @@
 
 .container {
   height: auto;
-  padding: 4em 0;
+  margin-bottom: $section-spacing-desktop;
 
-  &__title {
-    font-weight: bold;
-    font-family: $font-secondary;
-    font-size: 4.8rem;
-    word-spacing: 3px;
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 4px solid $color-primary;
-    margin-bottom: none;
+  &__header {
+    margin-bottom: 4em;
 
-    h2 {
+    &__title {
+      font-weight: bold !important;
+      font-family: $font-secondary !important;
+      font-size: 4.8rem !important;
+      word-spacing: 3px;
       text-align: center;
+      padding-bottom: 0.8em;
+      border-bottom: 4px solid $color-primary;
+      margin-bottom: none;
+
+      h2 {
+        text-align: center;
+      }
     }
   }
 
@@ -25,5 +29,27 @@
     width: 2em;
     color: $color-primary;
     font-size: 5em;
+  }
+
+  @media (max-width: $desktops) {
+    margin-bottom: $section-spacing-small-devices;
+
+    &__header {
+      margin-bottom: 0;
+
+      &__title {
+        font-size: 4.5rem !important;
+        border-bottom: none !important;
+        padding-bottom: 0;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &__divider {
+      &__line {
+        border-width: 2px;
+        border-color: $color-tertiary;
+      }
+    }
   }
 }
