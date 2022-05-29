@@ -1,0 +1,66 @@
+@import "/styles/abstract/_variables.scss";
+
+.landingPage {
+  height: calc(90vh - 7.6rem);
+  background-color: $background-color-primary;
+  margin-bottom: $section-spacing-desktop;
+
+  &__title {
+    display: flex;
+    position: absolute;
+    width: 55%;
+    height: 35%;
+    transform: translate(-5%, 48.75%) skew(-15deg);
+    background-color: adjust-color($color: $color-primary, $alpha: -0.2);
+
+    h1 {
+      display: flex;
+      align-items: center;
+      color: $color-primary-white;
+      font-size: 7rem;
+      font-family: $font-secondary;
+      margin: 0 0 0 3.5rem;
+      text-align: center;
+    }
+  }
+
+  &__imageContainer {
+    span {
+      height: 100% !important;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media (max-width: $desktops) {
+    height: calc(65vh - 7.6rem);
+    margin-bottom: $section-spacing-small-devices;
+
+    &__imageContainer {
+      height: 100%;
+
+      img {
+        object-position: left;
+      }
+    }
+
+    &__title {
+      background-color: transparent;
+      width: 75%;
+      height: 25%;
+      justify-content: center;
+      align-items: center;
+      transform: translate(0, 50%);
+
+      h1 {
+        background-color: adjust-color($color: $color-primary, $alpha: -0.2);
+        font-size: 4rem;
+        margin: 0;
+        width: 100%;
+        padding: 0.5em;
+      }
+    }
+  }
+}

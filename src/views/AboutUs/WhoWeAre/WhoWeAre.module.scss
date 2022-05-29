@@ -1,0 +1,49 @@
+@import "/styles/abstract/variables";
+.whoWeAre {
+  margin-bottom: 5rem;
+
+  &__header {
+    height: 50vh;
+
+    &__title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 9.6rem !important;
+      font-family: $font-secondary !important;
+      color: $color-primary-white !important;
+      letter-spacing: 0.88px;
+    }
+
+    span {
+      height: 100% !important;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    word-spacing: 8px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 5rem;
+  }
+
+  &__text1 {
+    color: $color-primary;
+  }
+
+  @media (max-width: $desktops) {
+    &__header {
+      &__title {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

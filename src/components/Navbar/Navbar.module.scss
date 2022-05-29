@@ -1,0 +1,38 @@
+@import "/styles/abstract/variables";
+
+.navbar {
+  width: auto;
+  height: 100%;
+  background: transparent !important;
+  border-right: none;
+  font-family: $font-primary;
+
+  li {
+    text-align: center;
+    width: 25%;
+    margin-right: 5rem;
+    color: adjust-color($color: $color-primary, $alpha: 0.3) !important;
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+
+    &:hover {
+      color: #000073 !important;
+      font-weight: bolder;
+    }
+  }
+}
+
+@media (max-width: $tablets) {
+  .navbar {
+    height: 40%;
+
+    li {
+      flex: 1;
+      width: 100%;
+      margin-bottom: 5rem !important;
+
+      [class="ant-menu-submenu-title"] {
+        padding-right: 16px;
+      }
+    }
+  }
+}

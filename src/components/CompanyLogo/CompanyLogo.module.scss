@@ -1,0 +1,26 @@
+@import "/styles/abstract/variables";
+
+.logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    flex: 8;
+    color: $color-primary !important;
+    margin-bottom: 0 !important;
+    font-family: $font-secondary !important;
+    margin-left: 1.5rem;
+  }
+
+  svg {
+    flex: 1;
+  }
+}
+
+@media (min-width: $landscape-phones) {
+}
+
+@media (min-width: $tablets) {
+}

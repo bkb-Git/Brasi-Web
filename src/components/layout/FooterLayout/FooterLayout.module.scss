@@ -1,0 +1,102 @@
+@import "/styles/abstract/variables";
+
+.footerSection {
+  height: 100%;
+}
+
+.footerItemIcon {
+  margin: 0 10px 0.6em 0;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $color-primary;
+
+  @media (max-width: $tablets) {
+    font-size: 4rem;
+  }
+}
+
+.footer {
+  height: 50vh;
+
+  &__container {
+    height: 100%;
+
+    &__companyLogo {
+      @extend .footerSection;
+    }
+
+    &__contactUs {
+      @extend .footerSection;
+
+      &__container {
+        height: 100%;
+
+        &__title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          h4 {
+            font-family: $font-secondary;
+          }
+
+          &__icon {
+            @extend .footerItemIcon;
+          }
+        }
+      }
+    }
+
+    &__location {
+      @extend .footerSection;
+
+      &__container {
+        height: 100%;
+
+        &__details {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &__title {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+
+          h4 {
+            font-family: $font-secondary;
+          }
+
+          &__icon {
+            @extend .footerItemIcon;
+          }
+        }
+
+        &__subtitle {
+          &__divider {
+            div {
+              border-width: 2px;
+              border-color: $color-primary;
+              margin: 0.5em 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__divider {
+    height: 80%;
+    border-width: 3px;
+    border-color: $color-primary;
+  }
+
+  @media (max-width: $tablets) {
+    height: auto;
+    padding: 2em 0;
+
+    &__container {
+    }
+  }
+}

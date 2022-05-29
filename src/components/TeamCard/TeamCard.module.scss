@@ -1,0 +1,60 @@
+@import "/styles/abstract/variables";
+
+.container {
+  height: 80vh;
+  width: 50%;
+
+  &__card {
+    height: 100%;
+
+    &__image {
+      height: 70%;
+      width: 100%;
+
+      img {
+        object-fit: cover;
+
+        &[id="Public Relations Officer"] {
+          object-position: 100% 20%;
+        }
+      }
+    }
+
+    &__footer {
+      height: 30%;
+      background: $color-primary;
+      text-align: center;
+
+      &__header {
+        color: $color-primary-white !important;
+        font-family: $font-secondary;
+        letter-spacing: 0.88px;
+        margin-bottom: 0 !important;
+      }
+
+      &__paragraph {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__name {
+          font-size: 2rem !important;
+          color: $color-primary-white !important;
+          margin-bottom: 0 !important;
+        }
+
+        &__text {
+          color: $color-primary-white !important;
+          font-family: $font-primary;
+          letter-spacing: 0.88px;
+          margin-bottom: 0 !important;
+        }
+
+        &__icon {
+          color: $color-primary-white;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

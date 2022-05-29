@@ -1,0 +1,53 @@
+import { useEffect } from "react";
+import { Grid, Menu } from "antd";
+import { useRouter } from "next/dist/client/router";
+
+import styles from "./Navbar.module.scss";
+
+const items = [
+  { label: "Home", key: "/" },
+  {
+    label: "Services",
+    key: "/services",
+    children: [
+      { label: "Clearing and Forwarding", key: "/services/Clearing-&-Forwarding" },
+      { label: "Transport and Logistics", key: "/services/Transport-&-Logistics" },
+      { label: "Warehousing Solutions", key: "/services/Warehousing-Solutions" },
+    ],
+  },
+  { label: "About Us", key: "/about" },
+];
+
+const { useBreakpoint } = Grid;
+
+const Navbar = (props) => {
+  const { closeDrawer } = props;
+  const router = useRouter();
+
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) & !lg;
+
+  useEffect(() => {
+    const handleStop = () => closeDrawer(false);
+
+    router.events.on("routeChangeComplete", handleStop);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleStop);
+    };
+  }, [router]);
+
+  const handleRoute = (key) => router.push(`${key}`);
+
+  return (
+    <Menu
+      mode={isMobileOrTablet ? "vertical" : "horizontal"}
+      items={items}
+      onSelect={({ key }) => handleRoute(key)}
+      selectedKeys={router.asPath}
+      className={styles.navbar}
+    />
+  );
+};
+
+export default Navbar;

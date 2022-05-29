@@ -1,0 +1,31 @@
+@import "/styles/abstract/variables";
+
+.missionStatement {
+  margin-bottom: 5rem;
+
+  &__header {
+    &__title {
+      font-size: 96px;
+      font-family: $font-secondary;
+      text-align: center;
+      border-bottom: 4px solid $color-primary;
+      padding-bottom: 0.5em;
+    }
+  }
+  &__details {
+    font-family: $font-primary;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    word-spacing: 8px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 2rem;
+  }
+
+  @media (max-width: $tablets) {
+    &__header {
+      &__title {
+        font-size: 6rem !important;
+      }
+    }
+  }
+}
