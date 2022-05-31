@@ -1,5 +1,3 @@
-import { Space } from "antd";
-
 import LandingSection from "./LandingSection";
 import ServiceSection from "./ServiceSection";
 import OurValues from "./OurValues/OurValues";

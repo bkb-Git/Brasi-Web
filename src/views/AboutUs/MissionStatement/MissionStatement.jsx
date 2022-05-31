@@ -19,7 +19,7 @@ const MissionStatement = () => {
 
   const renderText = () => {
     return (
-      <Col xs={20} sm={20} lg={16} className={style.missionStatement__details} span={16}>
+      <Col xs={20} sm={20} lg={16} className={style.missionStatement__details}>
         <Paragraph className={style.missionStatement__details__text}>
           To constantly exceed customer expectations by providing flexible, reliable and superior freight, forwarding
           and global transportation solutions which include air, sea, customs brokerage and logistics services.

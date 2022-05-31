@@ -11,9 +11,9 @@ const { Title, Paragraph, Text } = Typography;
 const WhoWeAre = () => {
   const renderTitle = () => {
     return (
-      <Col lg={24} className={style.whoWeAre__header}>
+      <Col xs={24} sm={24} lg={24} className={style.whoWeAre__header}>
         <Image src={Handshake} />
-        <Title className={style.whoWeAre__header__title} level={1}>
+        <Title level={1} className={style.whoWeAre__header__title}>
           Who we are
         </Title>
       </Col>
@@ -40,7 +40,7 @@ const WhoWeAre = () => {
   };
 
   return (
-    <Row justify="center" align="center" className={style.whoWeAre}>
+    <Row justify="center" align="middle" className={style.whoWeAre}>
       {renderTitle()}
       {renderText()}
     </Row>

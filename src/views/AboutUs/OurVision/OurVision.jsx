@@ -1,4 +1,4 @@
-import { Col, Divider, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 
 const { Title, Paragraph } = Typography;
 
@@ -10,7 +10,9 @@ const OurVision = () => {
       <Col xs={20} sm={20} lg={24} className={style.ourVision__header}>
         <Row justify="center" align="middle">
           <Col xs={18} sm={18} lg={6}>
-            <Title className={style.ourVision__header__title}>Our Vision</Title>
+            <Title level={1} className={style.ourVision__header__title}>
+              Our Vision
+            </Title>
           </Col>
         </Row>
       </Col>

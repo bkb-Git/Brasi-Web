@@ -1,7 +1,7 @@
 .loader {
   height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  svg {
+    transform: translate(-25%, 0);
+  }
 }
