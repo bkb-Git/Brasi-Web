@@ -104,8 +104,6 @@ const MyApp = ({ Component, pageProps }) => {
     setLoading(false);
   });
 
-  console.log(router.pathname);
-
   const Header = () => {
     return (
       <Head>
@@ -125,7 +123,7 @@ const MyApp = ({ Component, pageProps }) => {
     );
   };
 
-  if (loading) return <Loader />;
+  if (true) return <Loader />;
 
   return (
     <>
