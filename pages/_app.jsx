@@ -123,7 +123,7 @@ const MyApp = ({ Component, pageProps }) => {
     );
   };
 
-  if (true) return <Loader />;
+  if (loading) return <Loader />;
 
   return (
     <>

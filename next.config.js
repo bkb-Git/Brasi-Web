@@ -11,6 +11,7 @@ module.exports = withPluginAntdLess({
     "@menu-item-height": "50px",
     "@menu-dark-item-active-bg": "#ccc",
     "@menu-dark-highlight-color": "#333",
+    "@menu-item-active-bg": "#0469c2",
 
     // Typography
     "@font-family": '"Montserrat", sans-serif',

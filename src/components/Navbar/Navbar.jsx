@@ -14,6 +14,7 @@ const items = [
       { label: "Transport and Logistics", key: "/services/transportandlogistics" },
       { label: "Warehousing Solutions", key: "/services/warehousingsolutions" },
     ],
+    popupClassName: styles.popUpMenu,
   },
   { label: "About Us", key: "/about" },
 ];

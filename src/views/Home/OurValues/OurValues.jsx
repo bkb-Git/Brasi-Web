@@ -38,18 +38,18 @@ const OurValues = () => {
 
   const renderTitle = () => {
     return (
-      <Col xs={20} sm={20} lg={20}>
-        <Row justify="center" align="center">
-          <Col xs={24} sm={24} lg={8} className={style.container__header}>
-            <Title level={1} className={style.container__header__title}>Our Values</Title>
+      <Row justify="center" align="center">
+        <Col xs={24} sm={24} lg={8} className={style.container__header}>
+          <Title level={1} className={style.container__header__title}>
+            Our Values
+          </Title>
+        </Col>
+        {isMobileOrTablet && (
+          <Col xs={12} sm={12} className={style.container__divider}>
+            <Divider className={style.container__divider__line} />
           </Col>
-          {isMobileOrTablet && (
-            <Col xs={12} sm={12} className={style.container__divider}>
-              <Divider className={style.container__divider__line} />
-            </Col>
-          )}
-        </Row>
-      </Col>
+        )}
+      </Row>
     );
   };
 
@@ -77,7 +77,9 @@ const OurValues = () => {
 
   return (
     <Row gutter={[0, 48]} className={style.container} justify="center" align="middle">
-      {renderTitle()}
+      <Col xs={20} sm={20} lg={20}>
+        {renderTitle()}
+      </Col>
       <Col xs={20} lg={16} xl={22}>
         {isMobileOrTablet ? renderCarousel() : renderValues()}
       </Col>

@@ -4,7 +4,10 @@
   &__companyLogo {
   }
 
-  &__divider {
-    border-color: $color-tertiary;
+  &__contactUs {
+    &__text {
+      color: $color-primary;
+      font-weight: 600;
+    }
   }
 }

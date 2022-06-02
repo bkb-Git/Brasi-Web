@@ -1,7 +1,7 @@
 @import "/styles/abstract/variables";
 
 .whoWeAre {
-  margin-bottom: 5rem;
+  margin-bottom: $section-spacing-desktop;
 
   &__header {
     height: 50vh;

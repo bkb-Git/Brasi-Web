@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MenuOutlined, MessageOutlined, PhoneOutlined } from "@ant-design/icons";
-import { Button, Col, Layout, Row, Tooltip, Grid, Typography } from "antd";
+import { Button, Col, Layout, Row, Tooltip, Grid, Typography, Affix } from "antd";
 
 import Navbar from "src/components/Navbar";
 import InquiryForm from "src/components/InquiryForm";
@@ -17,7 +17,7 @@ const HeaderLayout = () => {
   const [visible, setVisible] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
 
-  const { xs, sm, md, lg, xl, xxl } = useBreakpoint();
+  const { xs, sm, lg } = useBreakpoint();
   const isMobileOrTablet = (xs || sm) && !lg;
 
   const messageUs = () => {
@@ -29,7 +29,7 @@ const HeaderLayout = () => {
   };
 
   const renderBars = () => {
-    if ((xs || sm) && !lg)
+    if (isMobileOrTablet)
       return (
         <Col xs={8} sm={12} className={style.header__content__bars}>
           {messageUs()}
@@ -41,7 +41,7 @@ const HeaderLayout = () => {
   };
 
   const renderNavbar = () => {
-    if ((xs || sm) && !lg) return null;
+    if (isMobileOrTablet) return null;
     return (
       <Col flex={1} className={style.header__content__navbar}>
         <Navbar closeDrawer={setMenuVisible} />
@@ -50,7 +50,6 @@ const HeaderLayout = () => {
   };
 
   const renderContactUs = () => {
-    if ((xs || sm) && !lg) return null;
     return (
       <Col className={style.header__content__contactUs} flex={1}>
         <Row justify="center" align="middle" className={style.header__content__contactUs__container}>
@@ -58,7 +57,7 @@ const HeaderLayout = () => {
             <Paragraph copyable={{ icon: <PhoneOutlined /> }} style={{ marginBottom: 0 }}>
               +254 745789238
             </Paragraph>
-            {messageUs()}
+            {!isMobileOrTablet && messageUs()}
           </Row>
         </Row>
       </Col>
@@ -66,16 +65,18 @@ const HeaderLayout = () => {
   };
 
   return (
-    <Header className={style.header}>
-      <Row justify={(xs || sm) && !lg ? "space-between" : "center"} align="middle" className={style.header__content}>
-        <CompanyLogo responsiveWidths={{ xs: 16, sm: 12, lg: 8 }} />
-        {renderNavbar()}
-        {renderContactUs()}
-        {renderBars()}
-      </Row>
-      <InquiryForm visible={visible} setVisible={setVisible} />
-      <DrawerMenu menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
-    </Header>
+    <Affix>
+      <Header className={style.header}>
+        <Row justify={isMobileOrTablet ? "space-between" : "center"} align="middle" className={style.header__content}>
+          <CompanyLogo responsiveWidths={{ xs: 16, sm: 12, lg: 8 }} />
+          {renderNavbar()}
+          {!isMobileOrTablet && renderContactUs()}
+          {renderBars()}
+        </Row>
+        <InquiryForm visible={visible} setVisible={setVisible} />
+        <DrawerMenu contact={renderContactUs} menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+      </Header>
+    </Affix>
   );
 };
 

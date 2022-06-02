@@ -23,15 +23,30 @@ const InquiryForm = (props) => {
   }, [formState.submited]);
 
   const handleOk = () => {
+    // e.preventDefault();
     setFormState({ loading: true });
+
+    const postEmail = async (payload) => {
+      const endpoint = "/api/form";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      };
+
+      const response = await fetch(endpoint, options);
+      return response.json();
+    };
 
     form
       .validateFields()
-      .then((values) => {
+      .then(async (values) => {
+        const response = await postEmail(values);
+        console.log(response);
         form.resetFields();
-        console.log(values);
       })
-      .then(() => setTimeout(() => setFormState({ loading: false, submited: true }), 2500))
       .catch((info) => {
         console.log("Validate Failed:", info);
         setFormState({ loading: false });

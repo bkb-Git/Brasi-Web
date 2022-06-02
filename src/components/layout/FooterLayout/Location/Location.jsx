@@ -24,18 +24,11 @@ const Location = () => {
   const renderDetails = () => {
     return (
       <Row justify="center" align="top">
-        <Col lg={18} style={{ textAlign: "center" }}>
-          <Title level={5}>Main Office</Title>
-          <Col offset={6} span={12} className={style.location__divider}>
-            <Divider />
-          </Col>
+        <Col xs={20} lg={18} style={{ textAlign: "center", marginBottom: "1rem" }}>
+          <Title level={5}>Address</Title>
         </Col>
-        <Col xs={18} sm={18} lg={20} style={{ textAlign: "center" }}>
-          <InfoItem
-            info="Address : "
-            other="Loglink Limited, Rapen plaza, Katani road, Syokimau "
-            contactOnMobile={isMobileOrTablet}
-          />
+        <Col xs={20} sm={18} lg={24} style={{ textAlign: "center" }}>
+          <InfoItem other="Loglink Limited, Rapen plaza, Katani road, Syokimau " contactOnMobile={isMobileOrTablet} />
         </Col>
       </Row>
     );

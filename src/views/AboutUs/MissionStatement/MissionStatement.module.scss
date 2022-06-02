@@ -1,7 +1,7 @@
 @import "/styles/abstract/variables";
 
 .missionStatement {
-  margin-bottom: 5rem;
+  margin-bottom: $section-spacing-desktop;
 
   &__header {
     &__title {
@@ -18,7 +18,7 @@
   @media (max-width: $tablets) {
     &__header {
       &__title {
-        font-size: 6rem !important;
+        font-size: 4.5rem !important;
       }
     }
   }
