@@ -42,7 +42,7 @@ const Navbar = (props) => {
 
   return (
     <Menu
-      mode={isMobileOrTablet ? "vertical" : "horizontal"}
+      mode={isMobileOrTablet ? "inline" : "horizontal"}
       items={items}
       onSelect={({ key }) => handleRoute(key)}
       selectedKeys={router.asPath}

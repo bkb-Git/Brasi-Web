@@ -7,7 +7,7 @@
         color: white !important;
         background-color: adjust-color($color: $color-tertiary, $alpha: 0.6) !important;
       }
-      
+
       &.ant-menu-item-selected {
         color: white !important;
       }
@@ -44,6 +44,14 @@
       flex: 1;
       width: 100%;
       margin-bottom: 5rem !important;
+
+      ul li {
+        margin-bottom: 0 !important;
+      }
+
+      &::after {
+        border-right: none !important;
+      }
 
       &[class="ant-menu-item-selected"] {
         span {

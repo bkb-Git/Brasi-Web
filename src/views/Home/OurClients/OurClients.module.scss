@@ -15,8 +15,6 @@
   }
 
   @media (max-width: $desktops) {
-    margin-bottom: $section-spacing-small-devices;
-
     &__title {
       font-size: 4.5rem !important;
       padding-bottom: 0;
