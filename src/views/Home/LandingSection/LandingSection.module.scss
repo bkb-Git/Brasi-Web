@@ -16,9 +16,9 @@
     h1 {
       display: flex;
       align-items: center;
+      padding: 0.5em;
       color: $color-primary-white;
       font-size: 7rem;
-      font-family: $font-secondary;
       margin: 0 0 0 3.5rem;
       text-align: center;
     }
@@ -36,7 +36,6 @@
 
   @media (max-width: $desktops) {
     height: calc(65vh - 7.6rem);
-    margin-bottom: $section-spacing-small-devices;
 
     &__imageContainer {
       height: 100%;

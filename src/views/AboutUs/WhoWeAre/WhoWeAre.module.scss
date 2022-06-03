@@ -1,6 +1,7 @@
 @import "/styles/abstract/variables";
+
 .whoWeAre {
-  margin-bottom: 5rem;
+  margin-bottom: $section-spacing-desktop;
 
   &__header {
     height: 50vh;
@@ -11,9 +12,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 9.6rem !important;
-      font-family: $font-secondary !important;
       color: $color-primary-white !important;
-      letter-spacing: 0.88px;
     }
 
     span {
@@ -26,10 +25,6 @@
   }
 
   &__text {
-    font-family: $font-primary;
-    font-size: 2.2rem;
-    letter-spacing: 0.5px;
-    word-spacing: 8px;
     color: rgba(0, 0, 0, 0.8);
     margin-top: 5rem;
   }
@@ -38,7 +33,7 @@
     color: $color-primary;
   }
 
-  @media (max-width: $desktops) {
+  @media (max-width: $tablets) {
     &__header {
       &__title {
         width: 100%;

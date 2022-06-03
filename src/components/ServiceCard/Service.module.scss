@@ -14,10 +14,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 96px !important;
-      font-family: $font-secondary !important;
+      font-size: 9.6rem !important;
       color: $color-primary-white !important;
-      letter-spacing: 0.88px;
     }
 
     span {
@@ -35,10 +33,6 @@
   }
 
   &__text {
-    font-family: $font-primary;
-    font-size: 2.2rem;
-    letter-spacing: 0.5px;
-    word-spacing: 8px;
     color: rgba(0, 0, 0, 0.8);
     margin-top: 10rem;
 
@@ -58,11 +52,9 @@
       &__item {
         width: 85%;
         margin: 1.5rem 0;
-        list-style-type: disclosure-closed;
+        list-style-type: disc;
         font-family: $font-primary;
-        font-size: 1.8rem;
-        letter-spacing: 0.5px;
-        word-spacing: 4px;
+        font-size: 2rem;
 
         &::marker {
           color: $color-primary;
@@ -80,7 +72,12 @@
       }
     }
 
-    span {
+    &__list {
+      &__container {
+        &__item {
+          font-size: 2.5rem;
+        }
+      }
     }
   }
 }

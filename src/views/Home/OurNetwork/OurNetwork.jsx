@@ -47,7 +47,9 @@ const OurNetwork = () => {
       <Col xs={20} sm={20} md={18} lg={24} className={style.container__header}>
         <Row justify="center" align="middle">
           <Col xs={24} sm={24} lg={6}>
-            <Title className={style.container__header__title}>Our Network</Title>
+            <Title level={1} className={style.container__header__title}>
+              Our Network
+            </Title>
           </Col>
           {isMobileOrTablet && (
             <Col xs={12} sm={12} className={style.container__divider}>

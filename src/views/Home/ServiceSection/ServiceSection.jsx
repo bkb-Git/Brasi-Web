@@ -65,7 +65,13 @@ const ServiceSection = (props) => {
     return (
       <Col xs={20} sm={20} lg={13} className={style.serviceSection__imgContainer}>
         <div className={style.serviceSection__imgContainer__image}>
-          <Image src={details.image} alt={details.title} style={{ zIndex: 0 }} layout="fill" />
+          <Image
+            priority
+            src={details.image}
+            alt={`${details.title} loglink logistics service`}
+            style={{ zIndex: 0 }}
+            layout="fill"
+          />
         </div>
       </Col>
     );

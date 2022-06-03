@@ -6,6 +6,10 @@
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &__title {
     flex: 8;
     color: $color-primary !important;

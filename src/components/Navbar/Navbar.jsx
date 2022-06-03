@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Grid, Menu } from "antd";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 import styles from "./Navbar.module.scss";
 
@@ -10,10 +10,11 @@ const items = [
     label: "Services",
     key: "/services",
     children: [
-      { label: "Clearing and Forwarding", key: "/services/Clearing-&-Forwarding" },
-      { label: "Transport and Logistics", key: "/services/Transport-&-Logistics" },
-      { label: "Warehousing Solutions", key: "/services/Warehousing-Solutions" },
+      { label: "Clearing and Forwarding", key: "/services/clearingandforwarding" },
+      { label: "Transport and Logistics", key: "/services/transportandlogistics" },
+      { label: "Warehousing Solutions", key: "/services/warehousingsolutions" },
     ],
+    popupClassName: styles.popUpMenu,
   },
   { label: "About Us", key: "/about" },
 ];
@@ -41,7 +42,7 @@ const Navbar = (props) => {
 
   return (
     <Menu
-      mode={isMobileOrTablet ? "vertical" : "horizontal"}
+      mode={isMobileOrTablet ? "inline" : "horizontal"}
       items={items}
       onSelect={({ key }) => handleRoute(key)}
       selectedKeys={router.asPath}

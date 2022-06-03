@@ -13,12 +13,7 @@ const OurClients = () => {
   const ClientDescription = (props) => {
     const { children } = props;
 
-    if (isMobileOrTablet)
-      return (
-        <Paragraph level={4} style={{ textAlign: "center" }}>
-          {children}
-        </Paragraph>
-      );
+    if (isMobileOrTablet) return <Paragraph style={{ textAlign: "center" }}>{children}</Paragraph>;
 
     return (
       <Title level={5} style={{ textAlign: "center" }}>
@@ -44,7 +39,9 @@ const OurClients = () => {
       <Col xs={24} sm={24} lg={8}>
         <Row justify="center" align="middle">
           <Col xs={20} sm={20} lg={24}>
-            <Title className={style.container__title}>Our Clients</Title>
+            <Title level={1} className={style.container__title}>
+              Our Clients
+            </Title>
           </Col>
           {isMobileOrTablet && (
             <Col xs={12} sm={12} className={style.container__divider}>

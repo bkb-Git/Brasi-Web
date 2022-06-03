@@ -56,8 +56,7 @@
   }
 
   @media (max-width: $desktops) {
-    height: 100vh;
-    margin-bottom: $section-spacing-small-devices;
+    height: auto;
 
     &__details {
       height: auto;

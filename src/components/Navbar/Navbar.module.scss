@@ -1,5 +1,20 @@
 @import "/styles/abstract/variables";
 
+.popUpMenu {
+  ul {
+    li {
+      &:hover {
+        color: white !important;
+        background-color: adjust-color($color: $color-tertiary, $alpha: 0.6) !important;
+      }
+
+      &.ant-menu-item-selected {
+        color: white !important;
+      }
+    }
+  }
+}
+
 .navbar {
   width: auto;
   height: 100%;
@@ -30,8 +45,27 @@
       width: 100%;
       margin-bottom: 5rem !important;
 
+      ul li {
+        margin-bottom: 0 !important;
+      }
+
+      &::after {
+        border-right: none !important;
+      }
+
+      &[class="ant-menu-item-selected"] {
+        span {
+          color: $color-primary-white !important;
+        }
+      }
+
       [class="ant-menu-submenu-title"] {
         padding-right: 16px;
+      }
+
+      &:hover {
+        background: $color-tertiary;
+        color: $color-primary-white !important;
       }
     }
   }

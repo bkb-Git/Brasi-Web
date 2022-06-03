@@ -9,18 +9,10 @@
     margin-bottom: 4em;
 
     &__title {
-      font-weight: bold !important;
-      font-family: $font-secondary !important;
-      font-size: 4.8rem !important;
-      word-spacing: 3px;
       text-align: center;
       padding-bottom: 0.8em;
       border-bottom: 4px solid $color-primary;
-      margin-bottom: none;
-
-      h2 {
-        text-align: center;
-      }
+      margin-bottom: 0 !important;
     }
   }
 
@@ -32,8 +24,6 @@
   }
 
   @media (max-width: $desktops) {
-    margin-bottom: $section-spacing-small-devices;
-
     &__header {
       margin-bottom: 0;
 

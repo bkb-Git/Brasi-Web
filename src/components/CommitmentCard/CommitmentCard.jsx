@@ -30,12 +30,12 @@ const CommitmentCard = (props) => {
               <Col span={24} className={style.slide__section2__slideContainer__icon}>
                 {svg.first}
               </Col>
-              <Col span={24} className={style.slide__section2__slideContainer__title}>
+              <Col span={24}>
                 <Title level={4}>{title}</Title>
               </Col>
             </Row>
           </Col>
-          <Col span={18} style={{ padding: "0 16px" }}>
+          <Col span={16}>
             <Paragraph>{paragraph}</Paragraph>
           </Col>
         </Row>

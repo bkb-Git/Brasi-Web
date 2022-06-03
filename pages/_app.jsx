@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import Loader from "src/components/Loader";
 import MainLayout from "src/components/layout/MainLayout";
@@ -14,7 +15,7 @@ import "styles/index.scss";
 const SERVICES = {
   CLEARING_AND_LOGISTICS: {
     title: "Clearing and Forwarding",
-    link: "/services/Clearing-&-Forwarding",
+    link: "/services/clearingandforwarding",
     paragraph: `
       We offer our clients a one-stop shop solution for all their clearing and forwarding needs. Our staff teams
       are well trained and competent to handle even the most sophisticated projects in a reliable, safety oriented
@@ -40,7 +41,7 @@ const SERVICES = {
   },
   TRANSPORT_AND_LOGISTICS: {
     title: "Transport & Logistics",
-    link: "/services/Transport-&-Logistics",
+    link: "/services/transportandlogistics",
     paragraph: `
       We guarantee our clients safe handling of their shipments (packages, goods and merchandise) through load
       optimization arrangements to make sure that transporting, lifting, hauling, moving, carrying and delivery is
@@ -67,7 +68,7 @@ const SERVICES = {
   },
   WAREHOUSE_SOLUTIONS: {
     title: "Warehousing Solutions",
-    link: "/services/Warehousing-Solutions",
+    link: "/services/warehousingsolutions",
     paragraph: `
       We offer tailored and spacious warehousing services and arrangements for our clients which are accessible to
       both the local and international air and sea ports, to ensure that their cargo is not only safe and secure,
@@ -87,23 +88,53 @@ const SERVICES = {
   },
 };
 
+const ROUTES = {
+  "/": "Home | Loglink Logistics",
+  "/about": "About us | Loglink Logistics",
+  "/services/clearingandforwarding": "Clearing and Forwarding",
+  "/services/transportandlogistics": "Transport and Logistics",
+  "/services/warehousingsolutions": "Warehousing Solutions ",
+};
+
 const MyApp = ({ Component, pageProps }) => {
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   });
 
-  if (loading) return <Loader />;
-
-  return (
-    <>
+  const Header = () => {
+    return (
       <Head>
+        <title>{ROUTES[router.pathname]}</title>
+        <meta name="msapplication-TileColor" content="#9f00a7" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+        <meta
+          name="description"
+          content="Import,Export,Transport,Warehousing, Logisitics, Loglink Logistics Limited, Kenya"
+        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"></link>
       </Head>
+    );
+  };
+
+  if (loading) return <Loader />;
+
+  return (
+    <>
+      <Header />
       <MainLayout>
         <Component services={SERVICES} {...pageProps} />
       </MainLayout>

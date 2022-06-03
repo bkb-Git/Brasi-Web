@@ -1,0 +1,39 @@
+@import "/styles/abstract/variables";
+
+.ourVision {
+  margin-bottom: $section-spacing-desktop;
+  background-color: $color-primary;
+  padding: 3em 0;
+
+  &__header {
+    &__title {
+      text-align: center;
+      border-bottom: 4px solid $color-tertiary;
+      color: $color-primary-white !important;
+      padding-bottom: 0.8em;
+    }
+  }
+
+  &__details {
+    color: rgba(0, 0, 0, 0.8);
+
+    &__text {
+      text-align: center;
+      color: $color-primary-white !important;
+    }
+  }
+
+  @media (max-width: $tablets) {
+    &__header {
+      &__title {
+        font-size: 4.5rem !important;
+      }
+    }
+
+    &__details {
+      &__text {
+        font-size: 3rem !important;
+      }
+    }
+  }
+}
