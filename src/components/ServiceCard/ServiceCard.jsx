@@ -12,7 +12,7 @@ const ServiceCard = (props) => {
   const renderTitle = () => {
     return (
       <>
-        <Image id={title} src={image} />
+        <Image id={title} src={image} alt={`${title} loglink logistics service `} />
         <Title className={style.service__header__title} level={1}>
           {title}
         </Title>

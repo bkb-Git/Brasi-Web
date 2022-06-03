@@ -12,7 +12,7 @@ const WhoWeAre = () => {
   const renderTitle = () => {
     return (
       <>
-        <Image priority alt="handshake" src={Handshake} />
+        <Image priority alt="loglink logistics handshake" src={Handshake} />
         <Title level={1} className={style.whoWeAre__header__title}>
           Who we are
         </Title>

@@ -115,7 +115,7 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
         <meta
           name="description"
-          content="Import and Export services provided by Loglink Logistics Limited from Kenya"
+          content="Import,Export,Transport,Warehousing, Logisitics, Loglink Logistics Limited, Kenya"
         />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
