@@ -17,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@babel/plugin-proposal-export-default-from"],
+  "plugins": ["react"],
   "rules": {
     "prettier/prettier": [
       "error",
