@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -25,6 +25,8 @@ const MyApp = (props) => {
   const router = useRouter();
 
   const appActions = initAppActions([appState, setAppState]);
+
+  const contextValue = useMemo(() => ({ ...appState, ...appActions }), [appActions, appState]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -59,7 +61,7 @@ const MyApp = (props) => {
   if (loading) return <Loader />;
 
   return (
-    <AppContext.Provider value={{ ...appState, ...appActions }}>
+    <AppContext.Provider value={contextValue}>
       <Header />
       <MainLayout>
         <Component services={INFO_OBJECT.SERVICES} {...pageProps} />

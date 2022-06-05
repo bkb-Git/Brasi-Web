@@ -1,5 +1,5 @@
 import { CompassOutlined } from "@ant-design/icons";
-import { Col, Row, Typography, Grid, Divider } from "antd";
+import { Col, Row, Typography, Grid } from "antd";
 
 import InfoItem from "../InfoItem";
 
