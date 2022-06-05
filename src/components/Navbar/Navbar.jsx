@@ -26,7 +26,7 @@ const Navbar = (props) => {
   const router = useRouter();
 
   const { xs, sm, lg } = useBreakpoint();
-  const isMobileOrTablet = (xs || sm) & !lg;
+  const isMobileOrTablet = (xs || sm) && !lg;
 
   useEffect(() => {
     const handleStop = () => closeDrawer(false);

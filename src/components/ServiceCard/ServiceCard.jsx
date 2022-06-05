@@ -25,9 +25,9 @@ const ServiceCard = (props) => {
   const renderList = () => {
     return (
       <Row gutter={[0, 16]} className={style.service__list__container} justify="center" align="middle">
-        {services.map((item, index) => {
+        {services.map((item) => {
           return (
-            <li key={index + 1} className={style.service__list__container__item}>
+            <li key={`${item}`} className={style.service__list__container__item}>
               {item}
             </li>
           );

@@ -17,7 +17,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@babel/plugin-proposal-export-default-from"],
+  "plugins": ["react"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -34,6 +34,9 @@
     "react/prop-types": [0],
     "no-underscore-dangle": "off",
     "react/no-danger": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "no-restricted-exports": "off",
+    "react/function-component-definition": "off",
+    "react/no-unstable-nested-components": "off"
   }
 }
