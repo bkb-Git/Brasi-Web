@@ -33,7 +33,7 @@ const EmailService = () => {
         content: payload.content,
         name: payload.name,
       }),
-      "h:Reply-To": config.EMAIL_RECIPIENT,
+      "h:Reply-To": payload.email,
     };
 
     return service.getClient().messages.create(config.MAILGUN_DOMAIN, messageData);
