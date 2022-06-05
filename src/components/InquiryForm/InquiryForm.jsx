@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { CheckCircleOutlined, MailFilled, SendOutlined } from "@ant-design/icons";
-import { Button, Col, Form, Input, Modal, Result, Row, Typography } from "antd";
+import { Alert, Button, Col, Form, Input, Modal, Result, Row, Typography } from "antd";
+
+import { useAppContext } from "src/context/app";
+import { FETCH_STATUS } from "src/helpers/api";
 
 import style from "./InquiryForm.module.scss";
 
@@ -9,55 +12,32 @@ const { TextArea } = Input;
 
 const InquiryForm = (props) => {
   const { visible, setVisible } = props;
-  const [formState, setFormState] = useState({ loading: false, submited: false });
 
+  const appContext = useAppContext();
   const [form] = Form.useForm();
 
   useEffect(() => {
-    if (formState.submited) {
+    if (appContext.sendEmailState.fetchStatus === FETCH_STATUS.SUCCESS) {
       setTimeout(() => {
+        // Delay the closing of the modal to display success message
         setVisible(false);
-        setFormState({ submited: false });
-      }, 1000);
+        appContext.resetSendEmailState();
+      }, 3000);
     }
-  }, [formState.submited]);
+  }, [appContext, appContext.sendEmailState.fetchStatus, setVisible]);
 
   const handleOk = () => {
-    // e.preventDefault();
-    setFormState({ loading: true });
-
-    const postEmail = async (payload) => {
-      const endpoint = "/api/form";
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      };
-
-      const response = await fetch(endpoint, options);
-      return response.json();
-    };
-
-    form
-      .validateFields()
-      .then(async (values) => {
-        const response = await postEmail(values);
-        console.log(response);
-        form.resetFields();
-      })
-      .catch((info) => {
-        console.log("Validate Failed:", info);
-        setFormState({ loading: false });
-      });
+    form.validateFields().then((values) => appContext.sendEmail(values));
   };
 
-  const handleCancel = () => setVisible(false);
+  const handleCancel = () => {
+    appContext.resetSendEmailState();
+    setVisible(false);
+  };
 
   const nameInput = () => {
     return (
-      <Form.Item name="name" rules={[{ required: true, message: "Please provide your name!" }]}>
+      <Form.Item label="Your Full Name" name="name" rules={[{ required: true, message: "Please provide your name!" }]}>
         <Input placeholder="Name" />
       </Form.Item>
     );
@@ -66,17 +46,18 @@ const InquiryForm = (props) => {
   const emailInput = () => {
     return (
       <Form.Item
+        label="Your Email"
         name="email"
         rules={[{ required: true, message: "Please provide your email address!", type: "email" }]}
       >
-        <Input placeholder="Email Address" />
+        <Input placeholder="eg. john.rawlings@email.com" />
       </Form.Item>
     );
   };
 
   const subjectInput = () => {
     return (
-      <Form.Item name="subject">
+      <Form.Item label="Email subject" name="subject">
         <Input placeholder="Subject" />
       </Form.Item>
     );
@@ -84,25 +65,42 @@ const InquiryForm = (props) => {
 
   const descriptionInput = () => {
     return (
-      <Form.Item name="message" rules={[{ required: true, message: "Please provide a message!" }]}>
-        <TextArea rows={5} placeholder="What do you want to know" />
+      <Form.Item name="content" rules={[{ required: true, message: "Please provide a message!" }]}>
+        <TextArea rows={5} placeholder="Your inquiry here..." />
       </Form.Item>
     );
   };
 
   const customizedFooter = () => {
-    if (formState.submited) return null;
     return (
       <>
-        <Button type="ghost" onClick={handleCancel}>
+        <Button
+          type="ghost"
+          onClick={handleCancel}
+          disabled={appContext.sendEmailState.fetchStatus === FETCH_STATUS.LOADING}
+        >
           Cancel
         </Button>
-        ,
-        <Button loading={formState.loading} type="primary" icon={<SendOutlined />} onClick={handleOk} htmlType="submit">
+        <Button
+          loading={appContext.sendEmailState.fetchStatus === FETCH_STATUS.LOADING}
+          disabled={appContext.sendEmailState.fetchStatus === FETCH_STATUS.SUCCESS}
+          type="primary"
+          icon={<SendOutlined />}
+          onClick={handleOk}
+          htmlType="submit"
+        >
           Send
         </Button>
       </>
     );
+  };
+
+  const renderAlert = () => {
+    if (appContext.sendEmailState.fetchStatus === FETCH_STATUS.LOADING || !appContext.sendEmailState.error) {
+      return null;
+    }
+
+    return <Alert type="error" message={appContext.sendEmailState.error} />;
   };
 
   const renderForm = () => {
@@ -119,6 +117,7 @@ const InquiryForm = (props) => {
           {emailInput()}
           {subjectInput()}
           {descriptionInput()}
+          {renderAlert()}
         </Form>
       </Col>
     );
@@ -130,7 +129,7 @@ const InquiryForm = (props) => {
         <Result
           icon={<CheckCircleOutlined style={{ fill: "#023059 !important" }} />}
           status="success"
-          title="Thank you for speaking to us!"
+          title="Thank you for reaching out!"
         />
       </Col>
     );
@@ -154,7 +153,9 @@ const InquiryForm = (props) => {
   };
 
   const renderContent = () => {
-    if (formState.submited) return renderSuccess();
+    if (appContext.sendEmailState.fetchStatus === FETCH_STATUS.SUCCESS) {
+      return renderSuccess();
+    }
 
     return renderForm();
   };

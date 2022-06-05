@@ -8,7 +8,9 @@ import style from "./TeamCard.module.scss";
 const { Title, Paragraph } = Typography;
 
 const TeamCard = (props) => {
-  const { title, name, contact, email, img } = props.member;
+  const {
+    member: { title, name, contact, email, img },
+  } = props;
 
   const renderImage = () => {
     return (

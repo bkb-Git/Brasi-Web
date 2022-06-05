@@ -19,6 +19,10 @@ module.exports = withPluginAntdLess({
     "@font-size-base": "16px",
     "@font-size-lg": "@font-size-base + 2px",
     "@font-size-sm": "14px",
+
+    // Form
+    // Label
+    "@form-item-label-font-size": "@font-size-base - 4px",
   },
   webpack(config) {
     config.module.rules.push({
